@@ -1,13 +1,11 @@
 package com.hisham.ctintegrationsample
 
 import android.app.Activity
-import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import cartrawler.core.base.CartrawlerActivity
+import androidx.appcompat.app.AppCompatActivity
 import cartrawler.core.data.external.ReservationDetails
 import cartrawler.core.engine.CartrawlerSDK
 import kotlinx.android.synthetic.main.activity_main.*
