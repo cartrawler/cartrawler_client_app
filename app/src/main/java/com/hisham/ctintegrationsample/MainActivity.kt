@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import cartrawler.core.data.external.Payment
 import cartrawler.core.data.external.ReservationDetails
 import cartrawler.core.engine.CartrawlerSDK
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,27 +19,46 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         startStandaloneBtn.setOnClickListener {
-            CarTrawlerInjector.init(this)
+            CarTrawlerInjector.initStandalone(this)
+        }
+
+        inPathBtn.setOnClickListener {
+            CarTrawlerInjector.initInPath(this)
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (resultCode == Activity.RESULT_OK && requestCode == CarTrawlerInjector.REQUEST_CODE) {
-            val reservationDetails = data?.getParcelableExtra<ReservationDetails>(CartrawlerSDK.RESERVATION_DETAILS)
-            if (reservationDetails != null) {
-                handleCTResult(reservationDetails)
-            } else {
-                showToast("Failed to reserve!")
+        if (resultCode == Activity.RESULT_OK && requestCode == CarTrawlerInjector.REQUEST_CODE_STANDALONE) {
+            when (requestCode) {
+                CarTrawlerInjector.REQUEST_CODE_STANDALONE -> {
+                    val reservationDetails =
+                        data?.getParcelableExtra<ReservationDetails>(CartrawlerSDK.RESERVATION_DETAILS)
+                    if (reservationDetails != null) {
+                        handleResult("Reservation Details", reservationDetails.toString())
+                    } else {
+                        showToast("Failed to reserve!")
+                    }
+                }
+                CarTrawlerInjector.REQUEST_CODE_IN_PATH -> {
+                    val payment: Payment? = data?.getSerializableExtra(CartrawlerSDK.PAYMENT) as? Payment
+                    if (payment != null) {
+                        val gson = GsonBuilder().setPrettyPrinting().create()
+                        val details = gson.toJson(payment)
+                        handleResult("Payment", details)
+                    } else {
+                        showToast("InPath failed")
+                    }
+                }
             }
         }
     }
 
-    private fun handleCTResult(reservationDetails: ReservationDetails) {
+    private fun handleResult(title: String, message: String) {
         val dialog = AlertDialog.Builder(this)
-            .setTitle("Reservation Details")
-            .setMessage(reservationDetails.toString())
+            .setTitle(title)
+            .setMessage(message)
             .setNegativeButton("Cancel") { dialog, _ -> dialog?.dismiss() }
             .create()
 

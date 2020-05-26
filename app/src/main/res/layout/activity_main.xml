@@ -14,6 +14,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/inPathBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="InPath"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/startStandaloneBtn"
+        app:layout_constraintStart_toStartOf="@+id/startStandaloneBtn"
+        app:layout_constraintTop_toBottomOf="@+id/startStandaloneBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
