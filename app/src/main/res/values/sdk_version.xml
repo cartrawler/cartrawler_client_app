@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sdk_version">Version 10.3.0</string>
+    <string name="sdk_size">2.95 MB</string>
+    <string name="sdk_release_date">Released 20/05/2020</string>
+</resources>
