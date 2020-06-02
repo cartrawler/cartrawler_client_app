@@ -8,4 +8,5 @@
     <string name="in_path_description">Add car rental to the basket in the partner\'s booking flow.</string>
     <string name="start_in_path">Start In-Path</string>
     <string name="car_rental_app">Car Rental App</string>
+    <string name="settings_language_selection_note">To test a different language, please go to your phone settings to change your language and then return to this app.</string>
 </resources>

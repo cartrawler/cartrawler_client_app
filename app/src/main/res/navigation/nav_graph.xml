@@ -8,13 +8,14 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.hisham.ctintegrationsample.home.HomeFragment"
-        tools:layout="@layout/home_fragment"
-        android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-    </fragment>
-    <fragment android:id="@+id/settingsFragment" >
+        android:label=""
+        tools:layout="@layout/home_fragment" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.hisham.ctintegrationsample.settings.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/settings_fragment">
         <action
             android:id="@+id/action_Settings_to_themeFragment"
             app:destination="@id/themeFragment" />
@@ -22,6 +23,8 @@
             android:id="@+id/action_Settings_to_countriesListFragment"
             app:destination="@id/countriesListFragment" />
     </fragment>
+
     <fragment android:id="@+id/themeFragment" />
+
     <fragment android:id="@+id/countriesListFragment" />
 </navigation>

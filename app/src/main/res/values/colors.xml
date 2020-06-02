@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#fff</color>
     <color name="colorPrimaryLight">#fff</color>
     <color name="colorAccent">#007585</color>
+
+    <color name="genericPrimary">#007585</color>
+    <color name="genericDarkPrimary">#004852</color>
+    <color name="genericAccent">#f66000</color>
 </resources>
