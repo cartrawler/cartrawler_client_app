@@ -1,14 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
+    <style name="AppTheme" parent="CTLightTheme" />
 
-
-    <style name="SampleCTAppTheme" parent="CTAppTheme">
+    <style name="ClientAppTheme" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -26,37 +21,6 @@
         <!--        <item name="CTSecondaryActionTextColor">@color/DarkBlue</item> //Optional Colours-->
     </style>
 
-    <style name="EasyJetTheme" parent="CTDarkTheme">
-        <item name="colorPrimary">#ff751a</item>
-        <item name="CTPrimaryColor">#ff751a</item>
-        <item name="colorPrimaryDark">#c54500</item>
-        <item name="CTPrimaryDarkColor">#c54500</item>
-        <item name="colorAccent">#c54500</item>
-        <item name="CTCTAColor">#ff751a</item>
-        <item name="CTPrimaryLightColor">#ff751a</item>
-        <item name="CTBaseTextAppearance">@style/EasyJetAppFont</item>
-        <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
-        <item name="CTChipFont">@font/easyjet_rounded_ff</item>
-    </style>
-
-    <style name="EasyJetAppFont" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
-    </style>
-
-    <style name="EayJetAppWidgetFont" parent="Widget.AppCompat.EditText">
-        <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
-    </style>
-
-    <style name="EasyJetAppWidgetFont" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
-    </style>
-
-    <style name="EasyJetTitle" parent="TextAppearance.AppCompat.Title">
-        <item name="android:textColor">#FF6600</item>
-        <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -64,5 +28,6 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- Toolbar -->
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

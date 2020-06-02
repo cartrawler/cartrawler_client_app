@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: "kotlin-kapt"
 
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
 android {
     compileSdkVersion 29
     defaultConfig {
@@ -33,6 +35,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
@@ -44,14 +49,17 @@ dependencies {
     // android
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta6'
     implementation 'com.google.android.material:material:1.2.0-alpha06'
 
     // CT
-    implementation("com.cartrawler.android:car-rental:10.2.0") {
+    implementation("com.cartrawler.android:car-rental:10.3.0") {
         changing = true
     }
     implementation "com.google.code.gson:gson:2.8.6"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     // testing
     testImplementation 'junit:junit:4.13'
