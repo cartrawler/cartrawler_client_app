@@ -19,10 +19,21 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
+
+    signingConfigs {
+        config {
+            keyAlias 'CTDemoApp'
+            keyPassword 'F64!qs4RW1n3'
+            storeFile file('key/keystore')
+            storePassword 'F64!qs4RW1n3'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
 
         debug {
