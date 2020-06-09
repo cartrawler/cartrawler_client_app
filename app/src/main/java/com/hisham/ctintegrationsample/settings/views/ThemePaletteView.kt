@@ -4,8 +4,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.util.AttributeSet
 import android.widget.FrameLayout
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat
+import androidx.core.view.isGone
 import androidx.core.widget.ImageViewCompat
 import com.hisham.ctintegrationsample.R
 import kotlinx.android.synthetic.main.theme_palette_view.view.*
@@ -20,9 +19,14 @@ class ThemePaletteView @JvmOverloads constructor(
         inflate(context, R.layout.theme_palette_view, this)
     }
 
-    fun apply(primary: Int, primaryDark: Int, accent: Int) {
+    fun apply(primary: Int, primaryDark: Int, accent: Int?) {
         ImageViewCompat.setImageTintList(primaryColourIndicatorView, ColorStateList.valueOf(primary))
         ImageViewCompat.setImageTintList(primaryDarkColourIndicatorView, ColorStateList.valueOf(primaryDark))
-        ImageViewCompat.setImageTintList(accentColourIndicatorView, ColorStateList.valueOf(accent))
+
+        if (accent != null) {
+            ImageViewCompat.setImageTintList(accentColourIndicatorView, ColorStateList.valueOf(accent))
+        } else {
+            accentColourIndicatorView.isGone = true
+        }
     }
 }

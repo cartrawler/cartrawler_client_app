@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="carTrawler">CarTrawler</string>
+
+    <string name="carTrawlerGeneric">Generic Dark</string>
+    <color name="genericPrimary">#007585</color>
+    <color name="genericDarkPrimary">#004852</color>
+    <color name="genericAccent">#f66000</color>
+
+    <string name="carTrawlerGenericLight">Generic Light</string>
+    <color name="genericLightPrimary">#ffffff</color>
+    <color name="genericLightDarkPrimary">#ffffff</color>
+    <color name="genericLightAccent">#4a90e2</color>
+
+    <string name="partner">Partner</string>
+
+    <string name="partnerEasyJet">easyJet</string>
+    <color name="easyJetPrimary">#f66000</color>
+    <color name="easyJetDarkPrimary">#c94f00</color>
+    <color name="easyJetAccent">#f66000</color>
+
+    <string name="partnereDreams">eDreams</string>
+    <color name="eDreamsPrimary">#1000f6</color>
+    <color name="eDreamsDarkPrimary">#0c039a</color>
+    <color name="eDreamsAccent">#1000f6</color>
+
+    <string name="partnerNorwegian">Norwegian</string>
+    <color name="norwegianPrimary">#d0021b</color>
+    <color name="norwegianDarkPrimary">#a70216</color>
+    <color name="norwegianAccent">#051567</color>
+
+    <string name="partnerItaka">Itaka</string>
+    <color name="itakaPrimary">#ffffff</color>
+    <color name="itakaDarkPrimary">#e0e0e0</color>
+    <color name="itakaAccent">#e73c51</color>
+
+    <string name="partnerGoVoyages">GoVoyages</string>
+    <color name="goVoyagesPrimary">#6eb91b</color>
+    <color name="goVoyagesDarkPrimary">#518814</color>
+
+    <string name="partnerOpodo">Opodo</string>
+    <color name="opodoPrimary">#333333</color>
+    <color name="opodoDarkPrimary">#f58423</color>
+    <color name="opodoAccent">#333333</color>
+</resources>

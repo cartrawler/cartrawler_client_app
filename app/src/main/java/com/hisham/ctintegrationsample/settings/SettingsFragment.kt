@@ -27,6 +27,20 @@ class SettingsFragment : BaseFragment() {
         val primary = ContextCompat.getColor(requireContext(), R.color.genericPrimary)
         val dark = ContextCompat.getColor(requireContext(), R.color.genericDarkPrimary)
         val accent = ContextCompat.getColor(requireContext(), R.color.genericAccent)
-        themeView.palette(primary, dark, accent)
+        themeView.apply {
+            value("CarTrawler")
+            palette(primary, dark, accent)
+            setOnClickListener {
+//                it.findNavController().navigate(SettingsFragmentDirections.actionSettingsToPalettesFragment())
+            }
+        }
+
+        currencyView.setOnClickListener {
+//            it.findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToCurrenciesListFragment())
+        }
+
+        countryView.setOnClickListener {
+//            it.findNavController().navigate(SettingsFragmentDirections.actionSettingsToCountriesListFragment())
+        }
     }
 }

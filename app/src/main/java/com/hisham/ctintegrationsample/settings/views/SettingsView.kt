@@ -34,7 +34,7 @@ class SettingsView @JvmOverloads constructor(
         valueTv.text = value
     }
 
-    fun palette(primary: Int, primaryDark: Int, accent: Int) {
+    fun palette(primary: Int, primaryDark: Int, accent: Int?) {
         paletteView.apply {
             apply(primary, primaryDark, accent)
             isVisible = true
