@@ -2,13 +2,10 @@ package com.hisham.ctintegrationsample.home
 
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.hisham.ctintegrationsample.BaseFragment
+import com.hisham.ctintegrationsample.BuildConfig
 import com.hisham.ctintegrationsample.CarTrawlerInjector
 import com.hisham.ctintegrationsample.R
 import kotlinx.android.synthetic.main.home_fragment.*
@@ -41,7 +38,9 @@ class HomeFragment : BaseFragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.home, menu)
+        if (BuildConfig.DEBUG) { // Until we finish settings page
+            inflater.inflate(R.menu.home, menu)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
