@@ -23,7 +23,7 @@ object CarTrawlerInjector {
             .setOrderId("123")
             .setPassenger(passenger())
             .setVisitorId("123")
-            .setTheme(R.style.EasyJetTheme)
+            .setTheme(R.style.GenericTheme)
             .startRentalStandalone(activity, REQUEST_CODE_STANDALONE)
     }
 
@@ -39,7 +39,7 @@ object CarTrawlerInjector {
             .setPickupLocation("DUB")
             .setDropOffLocationId(11)
             .setDropOffTime(getDropOffDate())
-            .setTheme(R.style.EasyJetTheme)
+            .setTheme(R.style.GenericTheme)
             .startRentalInPath(activity, REQUEST_CODE_IN_PATH)
     }
 
