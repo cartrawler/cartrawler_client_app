@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="GenericTheme" parent="CTAppTheme">
+        <item name="colorPrimary">#007585</item>
+        <item name="CTPrimaryColor">#007585</item>
+        <item name="colorPrimaryDark">#004958</item>
+        <item name="CTPrimaryDarkColor">#004958</item>
+        <item name="colorAccent">#EB6401</item>
+        <item name="CTCTAColor">#EB6401</item>
+        <item name="CTPrimaryLightColor">#4BA4B5</item>
+    </style>
+</resources>
