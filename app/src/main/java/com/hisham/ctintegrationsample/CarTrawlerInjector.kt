@@ -30,7 +30,7 @@ object CarTrawlerInjector {
     fun initInPath(activity: Activity) {
         CartrawlerSDK.Builder()
             .setRentalInPathClientId("512434")
-            .setEnvironment("STAGING")
+            .setEnvironment(CartrawlerSDK.Environment.STAGING)
             .setCurrency("EUR")
             .setFlightNumberRequired(false)
             .setAccountId("CZ638817950")
@@ -45,17 +45,17 @@ object CarTrawlerInjector {
 
     private fun passenger(): CartrawlerSDKPassenger? {
         return CartrawlerSDKPassenger(
-            "Hisham",
-            "Gh",
-            "hisham@ct.com",
+            "John",
+            "Smith",
+            "john@example.com",
             "353",
-            "834736020",
-            "23 Railway Close",
+            "81234567",
+            "Dundrum Business Park",
             "Dublin",
-            "D13 AH90",
+            "D14 R7V2",
             "IE",
             "EZY130",
-            null)
+            "29")
     }
 
     private fun getPickUpDate(): GregorianCalendar {
