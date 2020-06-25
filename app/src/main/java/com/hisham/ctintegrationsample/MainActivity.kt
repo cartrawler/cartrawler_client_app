@@ -37,9 +37,9 @@ class MainActivity : AppCompatActivity() {
                     val reservationDetails =
                         data?.getParcelableExtra<ReservationDetails>(CartrawlerSDK.RESERVATION_DETAILS)
                     if (reservationDetails != null) {
-                        handleResult("Reservation Details", reservationDetails.toString())
+                        handleResult("Booking Completed!", "Booking has been completed successfully!")
                     } else {
-                        showToast("Failed to reserve!")
+                        showToast("Sorry! Something went wrong! We failed to complete your booking!")
                     }
                 }
                 CarTrawlerInjector.REQUEST_CODE_IN_PATH -> {
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         val dialog = AlertDialog.Builder(this)
             .setTitle(title)
             .setMessage(message)
-            .setNegativeButton("Cancel") { dialog, _ -> dialog?.dismiss() }
+            .setNegativeButton("Okay!") { dialog, _ -> dialog?.dismiss() }
             .create()
 
         dialog.show()
