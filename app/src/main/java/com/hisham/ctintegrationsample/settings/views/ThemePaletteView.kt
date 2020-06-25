@@ -2,9 +2,12 @@ package com.hisham.ctintegrationsample.settings.views
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.util.AttributeSet
 import android.widget.FrameLayout
-import androidx.core.view.isGone
+import android.widget.ImageView
+import androidx.core.content.ContextCompat
+import androidx.core.view.isInvisible
 import androidx.core.widget.ImageViewCompat
 import com.hisham.ctintegrationsample.R
 import kotlinx.android.synthetic.main.theme_palette_view.view.*
@@ -20,13 +23,23 @@ class ThemePaletteView @JvmOverloads constructor(
     }
 
     fun apply(primary: Int, primaryDark: Int, accent: Int?) {
-        ImageViewCompat.setImageTintList(primaryColourIndicatorView, ColorStateList.valueOf(primary))
-        ImageViewCompat.setImageTintList(primaryDarkColourIndicatorView, ColorStateList.valueOf(primaryDark))
+        tintImage(primaryColourIndicatorView, primary)
+        tintImage(primaryDarkColourIndicatorView, primaryDark)
 
         if (accent != null) {
-            ImageViewCompat.setImageTintList(accentColourIndicatorView, ColorStateList.valueOf(accent))
+            tintImage(accentColourIndicatorView, accent)
         } else {
-            accentColourIndicatorView.isGone = true
+            accentColourIndicatorView.isInvisible = true
+        }
+    }
+
+    private fun tintImage(imageView: ImageView, color: Int) {
+        val resolvedColor = ContextCompat.getColor(context, color)
+
+        if (resolvedColor != Color.WHITE) {
+            ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(resolvedColor))
+        } else {
+            imageView.setImageResource(R.drawable.grey_border_oval_shape)
         }
     }
 }

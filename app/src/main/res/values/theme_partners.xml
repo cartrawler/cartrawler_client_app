@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EDreamsTheme" parent="CTAppTheme">
+        <item name="colorPrimary">@color/eDreamsPrimary</item>
+        <item name="CTPrimaryColor">@color/eDreamsPrimary</item>
+        <item name="colorPrimaryDark">@color/eDreamsDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/eDreamsDarkPrimary</item>
+        <item name="colorAccent">@color/eDreamsAccent</item>
+        <item name="CTCTAColor">@color/eDreamsAccent</item>
+        <item name="CTPrimaryLightColor">#463BED</item>
+    </style>
+
+    <style name="NorwegianTheme" parent="CTAppTheme">
+        <item name="colorPrimary">@color/norwegianPrimary</item>
+        <item name="CTPrimaryColor">@color/norwegianPrimary</item>
+        <item name="colorPrimaryDark">@color/norwegianDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/norwegianDarkPrimary</item>
+        <item name="colorAccent">@color/norwegianAccent</item>
+        <item name="CTCTAColor">@color/norwegianAccent</item>
+        <item name="CTPrimaryLightColor">#FF5A63</item>
+    </style>
+
+    <style name="ItakaTheme" parent="CTAppTheme">
+        <item name="colorPrimary">@color/itakaPrimary</item>
+        <item name="CTPrimaryColor">@color/itakaPrimary</item>
+        <item name="colorPrimaryDark">@color/itakaDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/itakaDarkPrimary</item>
+        <item name="colorAccent">@color/itakaAccent</item>
+        <item name="CTCTAColor">@color/itakaAccent</item>
+        <item name="CTPrimaryLightColor">#FF5A63</item>
+    </style>
+
+    <style name="GoVoyagesTheme" parent="CTAppTheme">
+        <item name="colorPrimary">@color/goVoyagesPrimary</item>
+        <item name="CTPrimaryColor">@color/goVoyagesPrimary</item>
+        <item name="colorPrimaryDark">@color/goVoyagesDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/goVoyagesDarkPrimary</item>
+        <item name="colorAccent">@color/General_White</item>
+        <item name="CTCTAColor">@color/General_White</item>
+        <item name="CTPrimaryLightColor">#7B9E56</item>
+    </style>
+
+    <style name="OpodoTheme" parent="CTAppTheme">
+        <item name="colorPrimary">@color/opodoPrimary</item>
+        <item name="CTPrimaryColor">@color/opodoPrimary</item>
+        <item name="colorPrimaryDark">@color/opodoDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/opodoDarkPrimary</item>
+        <item name="colorAccent">@color/opodoAccent</item>
+        <item name="CTCTAColor">@color/opodoAccent</item>
+        <item name="CTPrimaryLightColor">#555252</item>
+    </style>
+</resources>

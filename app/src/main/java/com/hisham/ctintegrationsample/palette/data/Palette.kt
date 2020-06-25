@@ -6,6 +6,11 @@ import androidx.annotation.StringRes
 import com.hisham.ctintegrationsample.R
 import kotlinx.android.parcel.Parcelize
 
+sealed class PaletteUiData {
+    data class Item(val paletteDetails: PaletteDetails, val isSelected: Boolean) : PaletteUiData()
+    data class Header(@StringRes val title: Int) : PaletteUiData()
+}
+
 @Parcelize
 data class PaletteDetails(
     @StringRes val name: Int,
@@ -14,23 +19,20 @@ data class PaletteDetails(
     @ColorRes val accent: Int?
 ) : Parcelable
 
-data class Palettes(
-    val ctPalettes: List<PaletteDetails>,
-    val partnersPalettes: List<PaletteDetails>
-)
-
 object PalettesFactory {
 
-    fun palettes(): Palettes {
+    fun palettes(@StringRes currentSelectedName: Int): List<PaletteUiData> {
         val ctPalettes = listOf(
-            PaletteDetails(
-                R.string.carTrawler,
+            buildPaletteItem(
+                currentSelectedName,
+                R.string.carTrawlerGeneric,
                 R.color.genericPrimary,
                 R.color.genericDarkPrimary,
                 R.color.genericAccent
             ),
-            PaletteDetails(
-                R.string.carTrawler,
+            buildPaletteItem(
+                currentSelectedName,
+                R.string.carTrawlerGenericLight,
                 R.color.genericLightPrimary,
                 R.color.genericLightDarkPrimary,
                 R.color.genericLightAccent
@@ -38,37 +40,43 @@ object PalettesFactory {
         )
 
         val partnersPalettes = listOf(
-            PaletteDetails(
+            buildPaletteItem(
+                currentSelectedName,
                 R.string.partnerEasyJet,
                 R.color.easyJetPrimary,
                 R.color.easyJetDarkPrimary,
                 R.color.easyJetAccent
             ),
-            PaletteDetails(
+            buildPaletteItem(
+                currentSelectedName,
                 R.string.partnereDreams,
                 R.color.eDreamsPrimary,
                 R.color.eDreamsDarkPrimary,
                 R.color.eDreamsAccent
             ),
-            PaletteDetails(
+            buildPaletteItem(
+                currentSelectedName,
                 R.string.partnerNorwegian,
                 R.color.norwegianPrimary,
                 R.color.norwegianDarkPrimary,
                 R.color.norwegianAccent
             ),
-            PaletteDetails(
+            buildPaletteItem(
+                currentSelectedName,
                 R.string.partnerItaka,
                 R.color.itakaPrimary,
                 R.color.itakaDarkPrimary,
                 R.color.itakaAccent
             ),
-            PaletteDetails(
+            buildPaletteItem(
+                currentSelectedName,
                 R.string.partnerGoVoyages,
                 R.color.goVoyagesPrimary,
                 R.color.goVoyagesDarkPrimary,
                 null
             ),
-            PaletteDetails(
+            buildPaletteItem(
+                currentSelectedName,
                 R.string.partnerOpodo,
                 R.color.opodoPrimary,
                 R.color.opodoDarkPrimary,
@@ -76,6 +84,28 @@ object PalettesFactory {
             )
         )
 
-        return Palettes(ctPalettes, partnersPalettes)
+        return arrayListOf<PaletteUiData>().apply {
+            add(PaletteUiData.Header(R.string.carTrawler))
+            addAll(ctPalettes)
+            add(PaletteUiData.Header(R.string.partner))
+            addAll(partnersPalettes)
+        }
+    }
+
+    private fun buildPaletteItem(
+        currentSelectedName: Int,
+        name: Int,
+        primary: Int,
+        primaryDark: Int,
+        accent: Int?
+    ): PaletteUiData.Item {
+        return PaletteUiData.Item(
+            PaletteDetails(
+                name,
+                primary,
+                primaryDark,
+                accent
+            ), currentSelectedName == name
+        )
     }
 }

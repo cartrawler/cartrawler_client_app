@@ -30,6 +30,7 @@
     <fragment
         android:id="@+id/palettesFragment"
         android:name="com.hisham.ctintegrationsample.palette.PalettesFragment"
+        android:label="@string/action_theme"
         tools:layout="@layout/palettes_fragment" />
 
     <fragment android:id="@+id/countriesListFragment" />

@@ -10,4 +10,14 @@
         <item name="CTCTAColor">#EB6401</item>
         <item name="CTPrimaryLightColor">#4BA4B5</item>
     </style>
+
+    <style name="GenericLightTheme" parent="CTLightTheme">
+        <item name="colorPrimary">@color/genericLightPrimary</item>
+        <item name="CTPrimaryColor">@color/genericLightPrimary</item>
+        <item name="colorPrimaryDark">@color/genericLightDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/genericLightDarkPrimary</item>
+        <item name="colorAccent">@color/genericLightAccent</item>
+        <item name="CTCTAColor">#EB6401</item>
+        <item name="CTPrimaryLightColor">#4BA4B5</item>
+    </style>
 </resources>

@@ -5,12 +5,18 @@ import android.view.*
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.hisham.ctintegrationsample.BaseFragment
-import com.hisham.ctintegrationsample.BuildConfig
 import com.hisham.ctintegrationsample.CarTrawlerInjector
 import com.hisham.ctintegrationsample.R
+import com.hisham.ctintegrationsample.core.LocalStorage
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.home_fragment.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment() {
+
+    @Inject
+    lateinit var localStorage: LocalStorage
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,19 +34,17 @@ class HomeFragment : BaseFragment() {
         toolbarIcon(R.drawable.ic_app)
 
         startStandaloneBtn.setOnClickListener {
-            CarTrawlerInjector.initStandalone(requireActivity())
+            CarTrawlerInjector.initStandalone(requireActivity(), localStorage.palette)
         }
 
         inPathBtn.setOnClickListener {
-            CarTrawlerInjector.initInPath(requireActivity())
+            CarTrawlerInjector.initInPath(requireActivity(), localStorage.palette)
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        if (BuildConfig.DEBUG) { // Until we finish settings page
-            inflater.inflate(R.menu.home, menu)
-        }
+        inflater.inflate(R.menu.home, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

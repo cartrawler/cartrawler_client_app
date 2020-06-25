@@ -7,17 +7,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.R
+import com.hisham.ctintegrationsample.core.LocalStorage
 import com.hisham.ctintegrationsample.palette.data.PalettesFactory
-import com.hisham.ctintegrationsample.palette.views.PaletteHeaderItemView
-import com.hisham.ctintegrationsample.palette.views.PaletteItemView
-import com.xwray.groupie.GroupAdapter
-import com.xwray.groupie.Section
-import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.palettes_fragment.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class PalettesFragment : BaseFragment() {
 
-    private val groupAdapter: GroupAdapter<GroupieViewHolder> = GroupAdapter<GroupieViewHolder>()
+    @Inject
+    lateinit var localStorage: LocalStorage
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,11 +30,14 @@ class PalettesFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        groupAdapter.spanCount = 2
         recyclerView.apply {
-            adapter = groupAdapter
-            layoutManager = GridLayoutManager(requireContext(), groupAdapter.spanCount).apply {
-                spanSizeLookup = groupAdapter.spanSizeLookup
+            setHasFixedSize(true)
+            layoutManager = GridLayoutManager(requireContext(), 2).apply {
+                spanSizeLookup = object: GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int): Int {
+                        return if (adapter?.getItemViewType(position) == PalettesAdapter.TYPE_ITEM) 1 else 2
+                    }
+                }
             }
         }
 
@@ -42,18 +45,17 @@ class PalettesFragment : BaseFragment() {
     }
 
     private fun populateAdapter() {
-        val (ctPalettes, partnersPalettes) = PalettesFactory.palettes()
+        var selectedPaletteName = localStorage.palette.name
+        val list = PalettesFactory.palettes(selectedPaletteName)
+        val adapter = PalettesAdapter(ArrayList(list))
+        recyclerView.adapter = adapter
 
-        // CT Palettes
-        groupAdapter.add(Section().apply {
-            setHeader(PaletteHeaderItemView(getString(R.string.carTrawler)))
-            ctPalettes.forEach { add(PaletteItemView(it)) }
-        })
-
-        // Partner Palettes
-        groupAdapter.add(Section().apply {
-            setHeader(PaletteHeaderItemView(getString(R.string.partner)))
-            partnersPalettes.forEach { add(PaletteItemView(it)) }
-        })
+        adapter.apply {
+            onItemClickListener { position, data ->
+                selectedPaletteName = data.paletteDetails.name
+                adapter.update(position, data.copy(isSelected = true))
+                localStorage.palette = data.paletteDetails
+            }
+        }
     }
 }

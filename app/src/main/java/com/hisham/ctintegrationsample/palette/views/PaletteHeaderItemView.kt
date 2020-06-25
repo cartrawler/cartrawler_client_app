@@ -1,15 +1,24 @@
 package com.hisham.ctintegrationsample.palette.views
 
+import android.content.Context
+import android.util.AttributeSet
+import android.view.View
+import android.widget.FrameLayout
+import androidx.annotation.StringRes
 import com.hisham.ctintegrationsample.R
-import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
-import com.xwray.groupie.kotlinandroidextensions.Item
 import kotlinx.android.synthetic.main.palette_list_header_item.view.*
 
-class PaletteHeaderItemView(private val title: String) : Item() {
+class PaletteHeaderItemView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : FrameLayout(context, attrs, defStyleAttr) {
 
-    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        viewHolder.itemView.paletteHeaderTv.text = title
+    init {
+        View.inflate(context, R.layout.palette_list_header_item, this)
     }
 
-    override fun getLayout(): Int = R.layout.palette_list_header_item
+    fun bind(@StringRes title: Int) {
+        paletteHeaderTv.text = context.getString(title)
+    }
 }

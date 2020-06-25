@@ -5,7 +5,9 @@ import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
 import com.microsoft.appcenter.distribute.Distribute
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class App : MultiDexApplication() {
 
     override fun onCreate() {

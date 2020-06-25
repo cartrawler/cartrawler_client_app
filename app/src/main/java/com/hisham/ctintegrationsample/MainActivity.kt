@@ -13,8 +13,10 @@ import cartrawler.core.data.external.Payment
 import cartrawler.core.data.external.ReservationDetails
 import cartrawler.core.engine.CartrawlerSDK
 import com.google.gson.GsonBuilder
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

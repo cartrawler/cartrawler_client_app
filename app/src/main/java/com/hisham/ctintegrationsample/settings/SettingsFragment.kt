@@ -4,12 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.R
+import com.hisham.ctintegrationsample.core.LocalStorage
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.settings_fragment.*
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SettingsFragment : BaseFragment() {
+
+    @Inject
+    lateinit var localStorage: LocalStorage
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,14 +31,14 @@ class SettingsFragment : BaseFragment() {
 
         toolbarIcon(0)
 
-        val primary = ContextCompat.getColor(requireContext(), R.color.genericPrimary)
-        val dark = ContextCompat.getColor(requireContext(), R.color.genericDarkPrimary)
-        val accent = ContextCompat.getColor(requireContext(), R.color.genericAccent)
+        val (name, primary, dark, accent) = localStorage.palette
+
         themeView.apply {
-            value("CarTrawler")
+            value(getString(name))
             palette(primary, dark, accent)
             setOnClickListener {
-//                it.findNavController().navigate(SettingsFragmentDirections.actionSettingsToPalettesFragment())
+                it.findNavController()
+                    .navigate(SettingsFragmentDirections.actionSettingsToPalettesFragment())
             }
         }
 
