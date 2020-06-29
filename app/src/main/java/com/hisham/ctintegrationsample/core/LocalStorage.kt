@@ -21,6 +21,7 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
     private fun savePalette(paletteDetails: PaletteDetails) {
         sharedPrefs.edit {
             putInt(KEY_THEME_NAME, paletteDetails.name)
+            putInt(KEY_CLIENT_ID, paletteDetails.clientId)
             putInt(KEY_PRIMARY_COLOUR, paletteDetails.primary)
             putInt(KEY_PRIMARY_DARK_COLOUR, paletteDetails.primaryDark)
             paletteDetails.accent?.let { putInt(KEY_ACCENT_COLOUR, it) }
@@ -31,6 +32,7 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         return sharedPrefs.run {
             PaletteDetails(
                 getInt(KEY_THEME_NAME, R.string.carTrawlerGeneric),
+                getInt(KEY_CLIENT_ID, R.string.carTrawlerGenericClientId),
                 getInt(KEY_PRIMARY_COLOUR, R.color.genericPrimary),
                 getInt(KEY_PRIMARY_DARK_COLOUR, R.color.genericDarkPrimary),
                 getInt(KEY_ACCENT_COLOUR, R.color.genericAccent)
@@ -42,6 +44,7 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         private const val CT_APP_SHARED_PREFS = "com.cartrawler.android.app"
 
         private const val KEY_THEME_NAME = "KEY_THEME_NAME"
+        private const val KEY_CLIENT_ID = "KEY_CLIENT_ID"
         private const val KEY_PRIMARY_COLOUR = "KEY_PRIMARY_COLOUR"
         private const val KEY_PRIMARY_DARK_COLOUR = "KEY_PRIMARY_DARK_COLOUR"
         private const val KEY_ACCENT_COLOUR = "KEY_ACCENT_COLOUR"

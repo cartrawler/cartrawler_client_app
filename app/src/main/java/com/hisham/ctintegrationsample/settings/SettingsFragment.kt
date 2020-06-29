@@ -31,7 +31,7 @@ class SettingsFragment : BaseFragment() {
 
         toolbarIcon(0)
 
-        val (name, primary, dark, accent) = localStorage.palette
+        val (name, _, primary, dark, accent) = localStorage.palette
 
         themeView.apply {
             value(getString(name))

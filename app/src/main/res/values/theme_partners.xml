@@ -8,7 +8,8 @@
         <item name="CTPrimaryDarkColor">@color/eDreamsDarkPrimary</item>
         <item name="colorAccent">@color/eDreamsAccent</item>
         <item name="CTCTAColor">@color/eDreamsAccent</item>
-        <item name="CTPrimaryLightColor">#463BED</item>
+        <item name="CTPrimaryLightColor">#1E44D4</item>
+        <item name="CTSecondaryActionColor">#1E44D4</item>
     </style>
 
     <style name="NorwegianTheme" parent="CTAppTheme">
@@ -18,17 +19,19 @@
         <item name="CTPrimaryDarkColor">@color/norwegianDarkPrimary</item>
         <item name="colorAccent">@color/norwegianAccent</item>
         <item name="CTCTAColor">@color/norwegianAccent</item>
-        <item name="CTPrimaryLightColor">#FF5A63</item>
+        <item name="CTPrimaryLightColor">#D71C3B</item>
+        <item name="CTSecondaryActionColor">#007585</item>
     </style>
 
-    <style name="ItakaTheme" parent="CTAppTheme">
+    <style name="ItakaTheme" parent="CTLightTheme">
         <item name="colorPrimary">@color/itakaPrimary</item>
         <item name="CTPrimaryColor">@color/itakaPrimary</item>
         <item name="colorPrimaryDark">@color/itakaDarkPrimary</item>
         <item name="CTPrimaryDarkColor">@color/itakaDarkPrimary</item>
         <item name="colorAccent">@color/itakaAccent</item>
         <item name="CTCTAColor">@color/itakaAccent</item>
-        <item name="CTPrimaryLightColor">#FF5A63</item>
+        <item name="CTPrimaryLightColor">#FFFFFF</item>
+        <item name="CTSecondaryActionColor">#EB2E2E</item>
     </style>
 
     <style name="GoVoyagesTheme" parent="CTAppTheme">
@@ -36,9 +39,10 @@
         <item name="CTPrimaryColor">@color/goVoyagesPrimary</item>
         <item name="colorPrimaryDark">@color/goVoyagesDarkPrimary</item>
         <item name="CTPrimaryDarkColor">@color/goVoyagesDarkPrimary</item>
-        <item name="colorAccent">@color/General_White</item>
-        <item name="CTCTAColor">@color/General_White</item>
-        <item name="CTPrimaryLightColor">#7B9E56</item>
+        <item name="colorAccent">#53B417</item>
+        <item name="CTCTAColor">#53B417</item>
+        <item name="CTPrimaryLightColor">#53B417</item>
+        <item name="CTSecondaryActionColor">#53B417</item>
     </style>
 
     <style name="OpodoTheme" parent="CTAppTheme">
@@ -48,6 +52,40 @@
         <item name="CTPrimaryDarkColor">@color/opodoDarkPrimary</item>
         <item name="colorAccent">@color/opodoAccent</item>
         <item name="CTCTAColor">@color/opodoAccent</item>
-        <item name="CTPrimaryLightColor">#555252</item>
+        <item name="CTPrimaryLightColor">#333333</item>
+        <item name="CTSecondaryActionColor">#333333</item>
+    </style>
+
+    <style name="TravellinkTheme" parent="CTLightTheme">
+        <item name="colorPrimary">@color/travellinkPrimary</item>
+        <item name="CTPrimaryColor">@color/travellinkPrimary</item>
+        <item name="colorPrimaryDark">@color/travellinkDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/travellinkDarkPrimary</item>
+        <item name="colorAccent">@color/travellinkAccent</item>
+        <item name="CTCTAColor">@color/travellinkAccent</item>
+        <item name="CTPrimaryLightColor">#333333</item>
+        <item name="CTSecondaryActionColor">#21A1A1</item>
+    </style>
+
+    <style name="TravelStartTheme" parent="CTLightTheme">
+        <item name="colorPrimary">@color/travelStartPrimary</item>
+        <item name="CTPrimaryColor">@color/travelStartPrimary</item>
+        <item name="colorPrimaryDark">@color/travelStartDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/travelStartDarkPrimary</item>
+        <item name="colorAccent">@color/travelStartAccent</item>
+        <item name="CTCTAColor">@color/travelStartAccent</item>
+        <item name="CTPrimaryLightColor">#1CB3F5</item>
+        <item name="CTSecondaryActionColor">@color/travelStartAccent</item>
+    </style>
+
+    <style name="FinnoTheme" parent="CTLightTheme">
+        <item name="colorPrimary">@color/finnoPrimary</item>
+        <item name="CTPrimaryColor">@color/finnoPrimary</item>
+        <item name="colorPrimaryDark">@color/finnoDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/finnoDarkPrimary</item>
+        <item name="colorAccent">@color/finnoAccent</item>
+        <item name="CTCTAColor">@color/finnoAccent</item>
+        <item name="CTPrimaryLightColor">@color/finnoAccent</item>
+        <item name="CTSecondaryActionColor">@color/finnoAccent</item>
     </style>
 </resources>

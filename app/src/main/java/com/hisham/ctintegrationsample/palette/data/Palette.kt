@@ -14,6 +14,7 @@ sealed class PaletteUiData {
 @Parcelize
 data class PaletteDetails(
     @StringRes val name: Int,
+    @StringRes val clientId: Int,
     @ColorRes val primary: Int,
     @ColorRes val primaryDark: Int,
     @ColorRes val accent: Int?
@@ -25,62 +26,94 @@ object PalettesFactory {
         val ctPalettes = listOf(
             buildPaletteItem(
                 currentSelectedName,
-                R.string.carTrawlerGeneric,
-                R.color.genericPrimary,
-                R.color.genericDarkPrimary,
-                R.color.genericAccent
+                name = R.string.carTrawlerGeneric,
+                clientId = R.string.carTrawlerGenericClientId,
+                primary = R.color.genericPrimary,
+                primaryDark = R.color.genericDarkPrimary,
+                accent = R.color.genericAccent
             ),
             buildPaletteItem(
                 currentSelectedName,
-                R.string.carTrawlerGenericLight,
-                R.color.genericLightPrimary,
-                R.color.genericLightDarkPrimary,
-                R.color.genericLightAccent
+                name = R.string.carTrawlerGenericLight,
+                clientId = R.string.carTrawlerGenericLightClientId,
+                primary = R.color.genericLightPrimary,
+                primaryDark = R.color.genericLightDarkPrimary,
+                accent = R.color.genericLightAccent
             )
         )
 
         val partnersPalettes = listOf(
             buildPaletteItem(
                 currentSelectedName,
-                R.string.partnerEasyJet,
-                R.color.easyJetPrimary,
-                R.color.easyJetDarkPrimary,
-                R.color.easyJetAccent
+                name = R.string.partnerEasyJet,
+                clientId = R.string.partnerEasyJetClientId,
+                primary = R.color.easyJetPrimary,
+                primaryDark = R.color.easyJetDarkPrimary,
+                accent = R.color.easyJetAccent
             ),
             buildPaletteItem(
                 currentSelectedName,
-                R.string.partnereDreams,
-                R.color.eDreamsPrimary,
-                R.color.eDreamsDarkPrimary,
-                R.color.eDreamsAccent
+                name = R.string.partnereDreams,
+                clientId = R.string.partnereDreamsClientId,
+                primary = R.color.eDreamsPrimary,
+                primaryDark = R.color.eDreamsDarkPrimary,
+                accent = R.color.eDreamsAccent
             ),
             buildPaletteItem(
                 currentSelectedName,
-                R.string.partnerNorwegian,
-                R.color.norwegianPrimary,
-                R.color.norwegianDarkPrimary,
-                R.color.norwegianAccent
+                name = R.string.partnerNorwegian,
+                clientId = R.string.partnerNorwegianClientId,
+                primary = R.color.norwegianPrimary,
+                primaryDark = R.color.norwegianDarkPrimary,
+                accent = R.color.norwegianAccent
             ),
             buildPaletteItem(
                 currentSelectedName,
-                R.string.partnerItaka,
-                R.color.itakaPrimary,
-                R.color.itakaDarkPrimary,
-                R.color.itakaAccent
+                name = R.string.partnerItaka,
+                clientId = R.string.partnerItakaClientId,
+                primary = R.color.itakaPrimary,
+                primaryDark = R.color.itakaDarkPrimary,
+                accent = R.color.itakaAccent
             ),
             buildPaletteItem(
                 currentSelectedName,
-                R.string.partnerGoVoyages,
-                R.color.goVoyagesPrimary,
-                R.color.goVoyagesDarkPrimary,
-                null
+                name = R.string.partnerGoVoyages,
+                clientId = R.string.partnerGoVoyagesClientId,
+                primary = R.color.goVoyagesPrimary,
+                primaryDark = R.color.goVoyagesDarkPrimary,
+                accent = null
             ),
             buildPaletteItem(
                 currentSelectedName,
-                R.string.partnerOpodo,
-                R.color.opodoPrimary,
-                R.color.opodoDarkPrimary,
-                R.color.opodoAccent
+                name = R.string.partnerOpodo,
+                clientId = R.string.partnerOpodoClientId,
+                primary = R.color.opodoPrimary,
+                primaryDark = R.color.opodoDarkPrimary,
+                accent = R.color.opodoAccent
+            ),
+            buildPaletteItem(
+                currentSelectedName,
+                name = R.string.partnerTravelLink,
+                clientId = R.string.partnerTravelLinkClientId,
+                primary = R.color.travellinkPrimary,
+                primaryDark = R.color.travellinkDarkPrimary,
+                accent = R.color.travellinkAccent
+            ),
+            buildPaletteItem(
+                currentSelectedName,
+                name = R.string.partnerTravelStart,
+                clientId = R.string.partnerTravelStartClientId,
+                primary = R.color.travelStartPrimary,
+                primaryDark = R.color.travelStartDarkPrimary,
+                accent = R.color.travelStartAccent
+            ),
+            buildPaletteItem(
+                currentSelectedName,
+                name = R.string.partnerFinno,
+                clientId = R.string.partnerFinnoClientId,
+                primary = R.color.finnoPrimary,
+                primaryDark = R.color.finnoDarkPrimary,
+                accent = R.color.finnoAccent
             )
         )
 
@@ -95,6 +128,7 @@ object PalettesFactory {
     private fun buildPaletteItem(
         currentSelectedName: Int,
         name: Int,
+        clientId: Int,
         primary: Int,
         primaryDark: Int,
         accent: Int?
@@ -102,6 +136,7 @@ object PalettesFactory {
         return PaletteUiData.Item(
             PaletteDetails(
                 name,
+                clientId,
                 primary,
                 primaryDark,
                 accent

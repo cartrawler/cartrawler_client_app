@@ -42,7 +42,7 @@ class PalettesAdapter(
     fun update(position: Int, data: PaletteUiData.Item) {
         removeCurrentSelection()
         list[position] = data
-        notifyItemChanged(position)
+        notifyDataSetChanged()
     }
 
     private fun removeCurrentSelection() {
@@ -51,7 +51,6 @@ class PalettesAdapter(
         if (pos != -1) {
             val element = (list[pos] as PaletteUiData.Item).copy(isSelected = false)
             list[pos] = element
-            notifyItemChanged(pos)
         }
     }
 

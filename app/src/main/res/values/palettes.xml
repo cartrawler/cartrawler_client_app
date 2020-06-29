@@ -3,43 +3,70 @@
     <string name="carTrawler">CarTrawler</string>
 
     <string name="carTrawlerGeneric">Generic Dark</string>
+    <string name="carTrawlerGenericClientId">512434</string>
     <color name="genericPrimary">#007585</color>
     <color name="genericDarkPrimary">#004852</color>
-    <color name="genericAccent">#f66000</color>
+    <color name="genericAccent">#EB6401</color>
 
     <string name="carTrawlerGenericLight">Generic Light</string>
-    <color name="genericLightPrimary">#ffffff</color>
-    <color name="genericLightDarkPrimary">#ffffff</color>
-    <color name="genericLightAccent">#4a90e2</color>
+    <string name="carTrawlerGenericLightClientId">512434</string>
+    <color name="genericLightPrimary">#FFFFFF</color>
+    <color name="genericLightDarkPrimary">#FFFFFF</color>
+    <color name="genericLightAccent">#EB6401</color>
 
     <string name="partner">Partner</string>
 
     <string name="partnerEasyJet">easyJet</string>
-    <color name="easyJetPrimary">#f66000</color>
+    <string name="partnerEasyJetClientId">512434</string>
+    <color name="easyJetPrimary">#FF6600</color>
     <color name="easyJetDarkPrimary">#c94f00</color>
     <color name="easyJetAccent">#f66000</color>
 
     <string name="partnereDreams">eDreams</string>
-    <color name="eDreamsPrimary">#1000f6</color>
-    <color name="eDreamsDarkPrimary">#0c039a</color>
-    <color name="eDreamsAccent">#1000f6</color>
+    <string name="partnereDreamsClientId">313415</string>
+    <color name="eDreamsPrimary">#1E44D4</color>
+    <color name="eDreamsDarkPrimary">#1E44D4</color>
+    <color name="eDreamsAccent">#1E44D4</color>
 
     <string name="partnerNorwegian">Norwegian</string>
-    <color name="norwegianPrimary">#d0021b</color>
-    <color name="norwegianDarkPrimary">#a70216</color>
-    <color name="norwegianAccent">#051567</color>
+    <string name="partnerNorwegianClientId">828735</string>
+    <color name="norwegianPrimary">#D71C3B</color>
+    <color name="norwegianDarkPrimary">#C31933</color>
+    <color name="norwegianLightPrimary">#D71C3B</color>
+    <color name="norwegianAccent">#003E50</color>
 
     <string name="partnerItaka">Itaka</string>
-    <color name="itakaPrimary">#ffffff</color>
-    <color name="itakaDarkPrimary">#e0e0e0</color>
-    <color name="itakaAccent">#e73c51</color>
+    <string name="partnerItakaClientId">528125</string>
+    <color name="itakaPrimary">#FFFFFF</color>
+    <color name="itakaDarkPrimary">#E0E0E6</color>
+    <color name="itakaAccent">#EB2E2E</color>
 
     <string name="partnerGoVoyages">GoVoyages</string>
-    <color name="goVoyagesPrimary">#6eb91b</color>
-    <color name="goVoyagesDarkPrimary">#518814</color>
+    <string name="partnerGoVoyagesClientId">315710</string>
+    <color name="goVoyagesPrimary">#53B417</color>
+    <color name="goVoyagesDarkPrimary">#53B417</color>
 
     <string name="partnerOpodo">Opodo</string>
+    <string name="partnerOpodoClientId">314945</string>
     <color name="opodoPrimary">#333333</color>
-    <color name="opodoDarkPrimary">#f58423</color>
-    <color name="opodoAccent">#333333</color>
+    <color name="opodoDarkPrimary">#333333</color>
+    <color name="opodoAccent">#FF6600</color>
+
+    <string name="partnerTravelLink">Travellink</string>
+    <string name="partnerTravelLinkClientId">314180</string>
+    <color name="travellinkPrimary">#21A1A1</color>
+    <color name="travellinkDarkPrimary">#21A1A1</color>
+    <color name="travellinkAccent">#21A1A1</color>
+
+    <string name="partnerTravelStart">TravelStart</string>
+    <string name="partnerTravelStartClientId">304030</string>
+    <color name="travelStartPrimary">#FFFFFF</color>
+    <color name="travelStartDarkPrimary">#FFFFFF</color>
+    <color name="travelStartAccent">#1CB3F5</color>
+
+    <string name="partnerFinno">Finno</string>
+    <string name="partnerFinnoClientId">535724</string>
+    <color name="finnoPrimary">#FFFFFF</color>
+    <color name="finnoDarkPrimary">#FFFFFF</color>
+    <color name="finnoAccent">#0064FC</color>
 </resources>

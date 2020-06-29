@@ -1,6 +1,6 @@
 package com.hisham.ctintegrationsample
 
-import androidx.multidex.MultiDexApplication
+import android.app.Application
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
@@ -8,7 +8,7 @@ import com.microsoft.appcenter.distribute.Distribute
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App : MultiDexApplication() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()

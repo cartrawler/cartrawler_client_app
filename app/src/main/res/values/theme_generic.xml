@@ -2,13 +2,14 @@
 <resources>
 
     <style name="GenericTheme" parent="CTAppTheme">
-        <item name="colorPrimary">#007585</item>
-        <item name="CTPrimaryColor">#007585</item>
-        <item name="colorPrimaryDark">#004958</item>
-        <item name="CTPrimaryDarkColor">#004958</item>
-        <item name="colorAccent">#EB6401</item>
-        <item name="CTCTAColor">#EB6401</item>
-        <item name="CTPrimaryLightColor">#4BA4B5</item>
+        <item name="colorPrimary">@color/genericPrimary</item>
+        <item name="CTPrimaryColor">@color/genericPrimary</item>
+        <item name="colorPrimaryDark">@color/genericDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/genericDarkPrimary</item>
+        <item name="CTPrimaryLightColor">#37A4B8</item>
+        <item name="colorAccent">@color/genericAccent</item>
+        <item name="CTCTAColor">@color/genericAccent</item>
+        <item name="CTSecondaryColor">#007585</item>
     </style>
 
     <style name="GenericLightTheme" parent="CTLightTheme">
@@ -16,8 +17,9 @@
         <item name="CTPrimaryColor">@color/genericLightPrimary</item>
         <item name="colorPrimaryDark">@color/genericLightDarkPrimary</item>
         <item name="CTPrimaryDarkColor">@color/genericLightDarkPrimary</item>
+        <item name="CTPrimaryLightColor">#37A4B8</item>
         <item name="colorAccent">@color/genericLightAccent</item>
         <item name="CTCTAColor">#EB6401</item>
-        <item name="CTPrimaryLightColor">#4BA4B5</item>
+        <item name="CTSecondaryColor">#007585</item>
     </style>
 </resources>
