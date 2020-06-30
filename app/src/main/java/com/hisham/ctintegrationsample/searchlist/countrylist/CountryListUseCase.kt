@@ -10,7 +10,7 @@ class CountryListUseCase @Inject constructor(localStorage: LocalStorage) :
     AbsSearchUseCase(localStorage) {
 
     override fun fetch(): List<SearchListItem> {
-        val isoCountries = Locale.getISOCountries().asList()
+        val isoCountries = Locale.getISOCountries()
 
         return isoCountries
             .map { SearchListItem.Country(countryName(it), it) }

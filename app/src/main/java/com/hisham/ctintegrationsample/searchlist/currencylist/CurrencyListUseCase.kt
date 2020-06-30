@@ -9,7 +9,7 @@ import javax.inject.Inject
 class CurrencyListUseCase @Inject constructor(storage: LocalStorage) : AbsSearchUseCase(storage) {
 
     override fun fetch(): List<SearchListItem> {
-        val currencies = Currency.getAvailableCurrencies().toList()
+        val currencies = Currency.getAvailableCurrencies()
 
         return currencies
             .map { SearchListItem.Currency(it.displayName, it.currencyCode) }
