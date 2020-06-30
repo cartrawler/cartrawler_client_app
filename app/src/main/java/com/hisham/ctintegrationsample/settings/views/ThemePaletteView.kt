@@ -3,12 +3,14 @@ package com.hisham.ctintegrationsample.settings.views
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
-import androidx.core.widget.ImageViewCompat
+import androidx.core.view.isVisible
 import com.hisham.ctintegrationsample.R
 import kotlinx.android.synthetic.main.theme_palette_view.view.*
 
@@ -28,18 +30,32 @@ class ThemePaletteView @JvmOverloads constructor(
 
         if (accent != null) {
             tintImage(accentColourIndicatorView, accent)
+            accentColourIndicatorView.isVisible = true
         } else {
+            tintImage(accentColourIndicatorView, R.color.General_White)
             accentColourIndicatorView.isInvisible = true
         }
     }
 
     private fun tintImage(imageView: ImageView, color: Int) {
-        val resolvedColor = ContextCompat.getColor(context, color)
+        imageView.setImageDrawable(buildCircle(color))
+    }
 
-        if (resolvedColor != Color.WHITE) {
-            ImageViewCompat.setImageTintList(imageView, ColorStateList.valueOf(resolvedColor))
-        } else {
-            imageView.setImageResource(R.drawable.grey_border_oval_shape)
+    private fun buildCircle(fillColor: Int): Drawable {
+        val drawable = GradientDrawable()
+        val resolvedColor = ContextCompat.getColor(context, fillColor)
+        val isWhite = resolvedColor == Color.WHITE
+
+        drawable.apply {
+            color = ColorStateList.valueOf(resolvedColor)
+            shape = GradientDrawable.OVAL
+            if (isWhite) {
+                setStroke(2, Color.parseColor("#c7c7cd"))
+            } else {
+                setStroke(0, 0)
+            }
         }
+
+        return drawable
     }
 }

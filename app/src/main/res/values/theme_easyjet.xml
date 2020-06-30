@@ -7,7 +7,8 @@
         <item name="CTPrimaryDarkColor">#c54500</item>
         <item name="colorAccent">#c54500</item>
         <item name="CTCTAColor">#ff751a</item>
-        <item name="CTPrimaryLightColor">#ff751a</item>
+        <item name="CTPrimaryLightColor">#FF6600</item>
+        <item name="CTSecondaryColor">#FF6600</item>
         <item name="CTBaseTextAppearance">@style/EasyJetAppFont</item>
         <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
         <item name="CTChipFont">@font/easyjet_rounded_ff</item>

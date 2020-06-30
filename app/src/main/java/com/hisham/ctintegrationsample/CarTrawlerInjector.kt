@@ -13,7 +13,7 @@ object CarTrawlerInjector {
 
     fun initStandalone(activity: Activity, palette: PaletteDetails) {
         CartrawlerSDK.Builder()
-            .setRentalStandAloneClientId("512434")  // eJ
+            .setRentalStandAloneClientId(clientId(activity, palette))
             .setAccountId("CZ638817950")
             .setCountry("IE")
             .setCurrency("EUR")
@@ -30,7 +30,7 @@ object CarTrawlerInjector {
 
     fun initInPath(activity: Activity, palette: PaletteDetails) {
         CartrawlerSDK.Builder()
-            .setRentalInPathClientId("512434")
+            .setRentalInPathClientId(clientId(activity, palette))
             .setEnvironment(CartrawlerSDK.Environment.STAGING)
             .setCurrency("EUR")
             .setFlightNumberRequired(false)
@@ -44,6 +44,11 @@ object CarTrawlerInjector {
             .startRentalInPath(activity, REQUEST_CODE_IN_PATH)
     }
 
+    private fun clientId(
+        activity: Activity,
+        palette: PaletteDetails
+    ) = activity.getString(palette.clientId)
+
     private fun getSelectedTheme(palette: PaletteDetails): Int {
         R.string.carTrawlerGeneric
         return when (palette.name) {
@@ -55,6 +60,9 @@ object CarTrawlerInjector {
             R.string.partnerItaka -> R.style.ItakaTheme
             R.string.partnerGoVoyages -> R.style.GoVoyagesTheme
             R.string.partnerOpodo -> R.style.OpodoTheme
+            R.string.partnerTravelStart -> R.style.TravelStartTheme
+            R.string.partnerTravelLink -> R.style.TravellinkTheme
+            R.string.partnerFinno -> R.style.FinnoTheme
             else -> R.style.GenericTheme
         }
     }

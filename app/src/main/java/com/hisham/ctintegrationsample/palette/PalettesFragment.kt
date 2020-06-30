@@ -45,15 +45,10 @@ class PalettesFragment : BaseFragment() {
     }
 
     private fun populateAdapter() {
-        var selectedPaletteName = localStorage.palette.name
-        val list = PalettesFactory.palettes(selectedPaletteName)
-        val adapter = PalettesAdapter(ArrayList(list))
-        recyclerView.adapter = adapter
-
-        adapter.apply {
+        val list = PalettesFactory.palettes(localStorage.palette.name)
+        recyclerView.adapter = PalettesAdapter(ArrayList(list)).apply {
             onItemClickListener { position, data ->
-                selectedPaletteName = data.paletteDetails.name
-                adapter.update(position, data.copy(isSelected = true))
+                update(position, data.copy(isSelected = true))
                 localStorage.palette = data.paletteDetails
             }
         }
