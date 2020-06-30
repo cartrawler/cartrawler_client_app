@@ -9,17 +9,18 @@ import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import kotlinx.android.synthetic.main.search_list_item_view.view.*
 import java.util.*
-import kotlin.collections.ArrayList
 
-class SearchListAdapter(private val list: List<SearchListItem>) : RecyclerView.Adapter<SearchListAdapter.SearchListViewHolder>() {
+class SearchListAdapter(private val list: List<SearchListItem>) :
+    RecyclerView.Adapter<SearchListAdapter.SearchListViewHolder>() {
 
     var itemCallback: ((SearchListItem) -> Unit)? = null
 
     private var isFiltering: Boolean = false
-    private var filteredList = ArrayList<SearchListItem>()
+    private var filteredList = mutableListOf<SearchListItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchListViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.search_list_item_view, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.search_list_item_view, parent, false)
         return SearchListViewHolder(view)
     }
 
@@ -50,27 +51,51 @@ class SearchListAdapter(private val list: List<SearchListItem>) : RecyclerView.A
     fun filterList(value: String) {
         isFiltering = true
 
-        val newList = list.filter {
-            val country = it as SearchListItem.Country
+        val currencyItemIndex = list.indexOfFirst { it is SearchListItem.Currency }
+        val countryItemIndex = list.indexOfFirst { it is SearchListItem.Country }
+
+        if (currencyItemIndex != -1) {
+            filterCurrencies(value)
+        }
+
+        if (countryItemIndex != -1) {
+            filterCountries(value)
+        }
+
+    }
+
+    private fun filterCountries(value: String) {
+        filteredList = list.filter {
+            it as SearchListItem.Country
+            it.countryName.toLowerCase(Locale.getDefault())
+                .contains(value.toLowerCase(Locale.getDefault()))
+        }.toMutableList()
+
+        DiffUtil.calculateDiff(DiffUtilsCallback(list, filteredList), false).dispatchUpdatesTo(this)
+    }
+
+    private fun filterCurrencies(value: String) {
+        filteredList = list.filter {
             val currency = it as SearchListItem.Currency
-            val countryName = country.countryName.toLowerCase(Locale.getDefault())
             val currencyName = currency.currencyName.toLowerCase(Locale.getDefault())
             val currencyISO = currency.currencyISO.toLowerCase(Locale.getDefault())
             val filterValue = value.toLowerCase(Locale.getDefault())
 
-            countryName.contains(filterValue)
             currencyName.contains(filterValue)
             currencyISO.contains(filterValue)
-        } as ArrayList<SearchListItem>
+        }.toMutableList()
 
-        DiffUtil.calculateDiff(DiffUtilsCallback(list, newList), false).dispatchUpdatesTo(this)
-        filteredList = newList
+        DiffUtil.calculateDiff(DiffUtilsCallback(list, filteredList), false).dispatchUpdatesTo(this)
     }
 
-    inner class SearchListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class SearchListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindCurrency(currency: SearchListItem.Currency) {
-            itemView.title.text = itemView.context.getString(R.string.currency_format, currency.currencyISO, currency.currencyName)
+            itemView.title.text = itemView.context.getString(
+                R.string.currency_format,
+                currency.currencyISO,
+                currency.currencyName
+            )
             itemView.setOnClickListener {
                 itemCallback?.invoke(currency)
             }

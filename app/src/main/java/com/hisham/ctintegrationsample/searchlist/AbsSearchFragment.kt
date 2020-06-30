@@ -9,11 +9,14 @@ import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.R
-import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import com.hisham.ctintegrationsample.searchlist.views.SearchListAdapter
 import kotlinx.android.synthetic.main.search_list_view.*
+import kotlin.properties.Delegates
+
 
 abstract class AbsSearchFragment : BaseFragment() {
+
+    private var searchListAdapter: SearchListAdapter by Delegates.notNull()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,11 +41,13 @@ abstract class AbsSearchFragment : BaseFragment() {
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(value: String?): Boolean {
-                return false
+                value?.let { searchListAdapter.filterList(it) }
+                return true
             }
 
             override fun onQueryTextChange(value: String?): Boolean {
-                return false
+                value?.let { searchListAdapter.filterList(it) }
+                return true
             }
         })
     }
@@ -64,12 +69,12 @@ abstract class AbsSearchFragment : BaseFragment() {
                             DividerItemDecoration.VERTICAL
                         )
                     )
-                    adapter = SearchListAdapter(it).apply {
+                    searchListAdapter = SearchListAdapter(it)
+                    adapter = searchListAdapter
+                    searchListAdapter.apply {
                         onItemClickListener { item ->
-                            if (item is SearchListItem.Country) {
-                                update(item)
-                                findNavController().navigateUp()
-                            }
+                            update(item)
+                            findNavController().navigateUp()
                         }
                     }
                 }

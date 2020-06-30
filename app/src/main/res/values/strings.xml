@@ -13,4 +13,5 @@
     <string name="car_rental_app">Car Rental App</string>
     <string name="settings_language_selection_note">To test a different language, please go to your phone settings to change your language and then return to this app.</string>
     <string name="currency_format">%1$s %2$s</string>
+    <string name="search_hint">Search</string>
 </resources>

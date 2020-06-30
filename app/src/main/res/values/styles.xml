@@ -14,6 +14,8 @@
         <item name="CTSecondaryColor">@color/colorPrimaryDark</item>
         <item name="CTAccentColor">@color/colorAccent</item>
 
+        <item name="searchViewStyle">@style/SearchViewStyle</item>
+
 
         <!--        <item name="CTCTAColor">@color/MainYellow</item> // Was CTAccentColor (default: colorAccent)-->
         <!--        <item name="CTCTATextColor">@color/DarkBlue</item> // New color (default: white)-->
@@ -30,4 +32,10 @@
 
     <!-- Toolbar -->
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- SearchView -->
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="queryHint">@string/search_hint</item>
+        <item name="android:searchIcon">@drawable/ct_search_black_24dp</item>
+    </style>
 </resources>
