@@ -3,6 +3,7 @@ package com.hisham.ctintegrationsample.searchlist
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -39,13 +40,29 @@ abstract class AbsSearchFragment : BaseFragment() {
         val searchItem = menu.findItem(R.id.searchAction)
         val searchView = searchItem.actionView as SearchView
 
+        searchItem.expandActionView()
+
+        searchItem.setOnActionExpandListener(object: MenuItem.OnActionExpandListener {
+            override fun onMenuItemActionExpand(p0: MenuItem?): Boolean {
+                return false
+            }
+
+            override fun onMenuItemActionCollapse(p0: MenuItem?): Boolean {
+                findNavController().navigateUp()
+                return true
+            }
+        })
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(value: String?): Boolean {
-                value?.let { searchListAdapter.filterList(it) }
-                return true
+                return updateFilterValue(value)
             }
 
             override fun onQueryTextChange(value: String?): Boolean {
+                return updateFilterValue(value)
+            }
+
+            private fun updateFilterValue(value: String?): Boolean {
                 value?.let { searchListAdapter.filterList(it) }
                 return true
             }

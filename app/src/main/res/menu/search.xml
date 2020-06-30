@@ -6,6 +6,7 @@
         android:id="@+id/searchAction"
         android:title="@string/search_country"
         android:icon="@drawable/ct_search_black_24dp"
+        app:iconifiedByDefault="false"
         app:showAsAction="collapseActionView|ifRoom"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
