@@ -3,21 +3,20 @@ package com.hisham.ctintegrationsample.searchlist
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.R
-import com.hisham.ctintegrationsample.searchlist.views.SearchListAdapter
+import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import kotlinx.android.synthetic.main.search_list_view.*
 import kotlin.properties.Delegates
 
 
-abstract class AbsSearchFragment : BaseFragment() {
+abstract class AbsSearchFragment<T : SearchListItem> : BaseFragment() {
 
-    private var searchListAdapter: SearchListAdapter by Delegates.notNull()
+    private var searchListAdapter: AbsSearchAdapter<T> by Delegates.notNull()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,7 +62,7 @@ abstract class AbsSearchFragment : BaseFragment() {
             }
 
             private fun updateFilterValue(value: String?): Boolean {
-                value?.let { searchListAdapter.filterList(it) }
+                value?.let { searchListAdapter.filter(it) }
                 return true
             }
         })
@@ -86,7 +85,7 @@ abstract class AbsSearchFragment : BaseFragment() {
                             DividerItemDecoration.VERTICAL
                         )
                     )
-                    searchListAdapter = SearchListAdapter(it)
+                    searchListAdapter = adapter(it)
                     adapter = searchListAdapter
                     searchListAdapter.apply {
                         onItemClickListener { item ->
@@ -101,5 +100,7 @@ abstract class AbsSearchFragment : BaseFragment() {
         }
     }
 
-    abstract fun viewModel(): AbsSearchViewModel
+    abstract fun viewModel(): AbsSearchViewModel<T>
+
+    abstract fun adapter(list: List<T>): AbsSearchAdapter<T>
 }

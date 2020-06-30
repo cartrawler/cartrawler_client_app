@@ -6,9 +6,9 @@ import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import java.util.*
 import javax.inject.Inject
 
-class CurrencyListUseCase @Inject constructor(storage: LocalStorage) : AbsSearchUseCase(storage) {
+class CurrencyListUseCase @Inject constructor(storage: LocalStorage) : AbsSearchUseCase<SearchListItem.Currency>(storage) {
 
-    override fun fetch(): List<SearchListItem> {
+    override fun fetch(): List<SearchListItem.Currency> {
         val currencies = Currency.getAvailableCurrencies()
 
         return currencies

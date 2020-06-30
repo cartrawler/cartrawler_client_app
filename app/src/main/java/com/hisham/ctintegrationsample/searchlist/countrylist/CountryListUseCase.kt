@@ -7,9 +7,9 @@ import java.util.*
 import javax.inject.Inject
 
 class CountryListUseCase @Inject constructor(localStorage: LocalStorage) :
-    AbsSearchUseCase(localStorage) {
+    AbsSearchUseCase<SearchListItem.Country>(localStorage) {
 
-    override fun fetch(): List<SearchListItem> {
+    override fun fetch(): List<SearchListItem.Country> {
         val isoCountries = Locale.getISOCountries()
 
         return isoCountries
