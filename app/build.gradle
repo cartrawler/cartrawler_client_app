@@ -79,6 +79,10 @@ dependencies {
     implementation "com.google.dagger:hilt-android:${versions.hilt}"
     kapt "com.google.dagger:hilt-android-compiler:${versions.hilt}"
 
+    //Dagger - Hilt Jetpack
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:${versions.hiltViewModel}"
+    kapt "androidx.hilt:hilt-compiler:${versions.hiltViewModel}"
+
     // Tools
     implementation "com.squareup.moshi:moshi:${versions.moshi}"
 

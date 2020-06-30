@@ -7,4 +7,5 @@
         android:icon="@drawable/ct_settings_black_24dp"
         android:title="@string/action_settings"
         app:showAsAction="always" />
+
 </menu>
