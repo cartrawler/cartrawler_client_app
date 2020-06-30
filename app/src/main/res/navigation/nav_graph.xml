@@ -30,10 +30,29 @@
     <fragment
         android:id="@+id/palettesFragment"
         android:name="com.hisham.ctintegrationsample.palette.PalettesFragment"
-        android:label="@string/action_theme"
         tools:layout="@layout/palettes_fragment" />
 
-    <fragment android:id="@+id/countriesListFragment" />
+    <fragment
+        android:id="@+id/countriesListFragment"
+        android:name="com.hisham.ctintegrationsample.searchlist.countrylist.CountryListFragment"
+        android:label="@string/action_country"
+        tools:layout="@layout/search_list_view" >
+        <action
+            android:id="@+id/action_countriesListFragment_to_settingsFragment"
+            app:enterAnim="@anim/ct_slide_in_up"
+            app:exitAnim="@anim/ct_slide_out_down"
+            app:popUpTo="@id/settingsFragment" />
+    </fragment>
 
-    <fragment android:id="@+id/currenciesListFragment" />
+    <fragment
+        android:id="@+id/currenciesListFragment"
+        android:name="com.hisham.ctintegrationsample.searchlist.currencylist.CurrencyListFragment"
+        android:label="@string/action_currency"
+        tools:layout="@layout/search_list_view" >
+        <action
+            android:id="@+id/action_currenciesListFragment_to_settingsFragment"
+            app:enterAnim="@anim/ct_slide_in_up"
+            app:exitAnim="@anim/ct_slide_out_down"
+            app:popUpTo="@id/settingsFragment" />
+    </fragment>
 </navigation>

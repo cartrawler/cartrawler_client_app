@@ -10,6 +10,7 @@ import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.core.LocalStorage
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.settings_fragment.*
+import java.util.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -42,12 +43,24 @@ class SettingsFragment : BaseFragment() {
             }
         }
 
-        currencyView.setOnClickListener {
-//            it.findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToCurrenciesListFragment())
+        currencyView.apply {
+            val currencyISO = localStorage.currency() ?: "EUR"
+            val currency = Currency.getInstance(currencyISO)
+            value(currency.displayName)
+            currencyView.setOnClickListener {
+                it.findNavController()
+                    .navigate(SettingsFragmentDirections.actionSettingsFragmentToCurrenciesListFragment())
+            }
         }
 
-        countryView.setOnClickListener {
-//            it.findNavController().navigate(SettingsFragmentDirections.actionSettingsToCountriesListFragment())
+        countryView.apply {
+            val countryISO = localStorage.countryISO() ?: "IE"
+            val country = Locale("", countryISO)
+            value(country.displayName)
+            countryView.setOnClickListener {
+                it.findNavController()
+                    .navigate(SettingsFragmentDirections.actionSettingsToCountriesListFragment())
+            }
         }
     }
 }

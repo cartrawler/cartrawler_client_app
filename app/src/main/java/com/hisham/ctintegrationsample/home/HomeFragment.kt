@@ -33,12 +33,15 @@ class HomeFragment : BaseFragment() {
 
         toolbarIcon(R.drawable.ic_app)
 
+        val currency = localStorage.currency() ?: "EUR"
+        val countryISO = localStorage.countryISO() ?: "IE"
+
         startStandaloneBtn.setOnClickListener {
-            CarTrawlerInjector.initStandalone(requireActivity(), localStorage.palette)
+            CarTrawlerInjector.initStandalone(requireActivity(), localStorage.palette, currency, countryISO)
         }
 
         inPathBtn.setOnClickListener {
-            CarTrawlerInjector.initInPath(requireActivity(), localStorage.palette)
+            CarTrawlerInjector.initInPath(requireActivity(), localStorage.palette, currency, countryISO)
         }
     }
 

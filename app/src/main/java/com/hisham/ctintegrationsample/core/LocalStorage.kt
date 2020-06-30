@@ -40,6 +40,26 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         }
     }
 
+    fun saveCurrency(value: String) {
+        sharedPrefs.edit {
+            putString(KEY_CURRENCY_VALUE, value)
+        }
+    }
+
+    fun currency(): String? = sharedPrefs.run {
+            getString(KEY_CURRENCY_VALUE, "EUR")
+    }
+
+    fun countryISO(): String? = sharedPrefs.run {
+        getString(KEY_COUNTRY_ISO_VALUE, "IE")
+    }
+
+    fun saveCountry(value: String) {
+        sharedPrefs.edit {
+            putString(KEY_COUNTRY_ISO_VALUE, value)
+        }
+    }
+
     private companion object {
         private const val CT_APP_SHARED_PREFS = "com.cartrawler.android.app"
 
@@ -48,5 +68,8 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         private const val KEY_PRIMARY_COLOUR = "KEY_PRIMARY_COLOUR"
         private const val KEY_PRIMARY_DARK_COLOUR = "KEY_PRIMARY_DARK_COLOUR"
         private const val KEY_ACCENT_COLOUR = "KEY_ACCENT_COLOUR"
+
+        private const val KEY_CURRENCY_VALUE = "KEY_CURRENCY_VALUE"
+        private const val KEY_COUNTRY_ISO_VALUE = "KEY_COUNTRY_ISO_VALUE"
     }
 }
