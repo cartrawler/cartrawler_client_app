@@ -6,18 +6,20 @@ import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import java.util.*
 import javax.inject.Inject
 
-class CountryListUseCase @Inject constructor(storage: LocalStorage) : AbsSearchUseCase(storage) {
+class CountryListUseCase @Inject constructor(localStorage: LocalStorage) :
+    AbsSearchUseCase(localStorage) {
 
     override fun fetch(): List<SearchListItem> {
-        val countryDataItems = mutableListOf<SearchListItem.Country>()
         val isoCountries = Locale.getISOCountries().asList()
-        isoCountries.map {
-            val locale = Locale("", it)
-            val countryName = locale.displayCountry
-            val data = SearchListItem.Country(countryName, it)
-            countryDataItems.add(data)
-        }
-        return countryDataItems.toList().sortedBy { it.countryISO }
+
+        return isoCountries
+            .map { SearchListItem.Country(countryName(it), it) }
+            .toList()
+            .sortedBy { it.countryISO }
     }
 
+    private fun countryName(country: String): String {
+        val locale = Locale("", country)
+        return locale.displayCountry
+    }
 }

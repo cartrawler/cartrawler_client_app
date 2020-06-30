@@ -10,12 +10,10 @@ class CurrencyListUseCase @Inject constructor(storage: LocalStorage) : AbsSearch
 
     override fun fetch(): List<SearchListItem> {
         val currencies = Currency.getAvailableCurrencies().toList()
-        val currencyDataItems = mutableListOf<SearchListItem.Currency>()
-        currencies.map {
-            val data = SearchListItem.Currency(it.displayName, it.currencyCode)
-            currencyDataItems.add(data)
-        }
-        return currencyDataItems.toList().sortedBy { it.currencyISO }
-    }
 
+        return currencies
+            .map { SearchListItem.Currency(it.displayName, it.currencyCode) }
+            .toList()
+            .sortedBy { it.currencyISO }
+    }
 }

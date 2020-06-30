@@ -53,7 +53,7 @@ abstract class AbsSearchFragment : BaseFragment() {
     }
 
     private fun initAdapter() {
-        viewModel().apply {
+        viewModel().run {
             // Observe
             liveData.observe(viewLifecycleOwner, Observer {
                 searchListRecyclerView.apply {

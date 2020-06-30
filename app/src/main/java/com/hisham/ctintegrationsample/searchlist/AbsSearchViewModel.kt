@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 
-abstract class AbsSearchViewModel(val absSearchUseCase: AbsSearchUseCase): ViewModel() {
+abstract class AbsSearchViewModel(private val absSearchUseCase: AbsSearchUseCase): ViewModel() {
 
     private val mutableLiveData = MutableLiveData<List<SearchListItem>>()
     val liveData: LiveData<List<SearchListItem>> = mutableLiveData
