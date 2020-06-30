@@ -18,7 +18,8 @@
         tools:layout="@layout/settings_fragment">
         <action
             android:id="@+id/action_Settings_to_palettesFragment"
-            app:destination="@id/palettesFragment" />
+            app:destination="@id/palettesFragment"
+            app:enterAnim="@anim/ct_enter_from_right" />
         <action
             android:id="@+id/action_Settings_to_countriesListFragment"
             app:destination="@id/countriesListFragment"

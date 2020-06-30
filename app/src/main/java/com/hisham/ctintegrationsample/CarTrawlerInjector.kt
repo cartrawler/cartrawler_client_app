@@ -81,7 +81,7 @@ object CarTrawlerInjector {
             "D14 R7V2",
             countryISO,
             "EZY130",
-            "29")
+            null)
     }
 
     private fun getPickUpDate(): GregorianCalendar {

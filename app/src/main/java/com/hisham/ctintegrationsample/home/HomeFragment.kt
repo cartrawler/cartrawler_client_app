@@ -2,8 +2,8 @@ package com.hisham.ctintegrationsample.home
 
 import android.os.Bundle
 import android.view.*
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.CarTrawlerInjector
 import com.hisham.ctintegrationsample.R
@@ -50,8 +50,12 @@ class HomeFragment : BaseFragment() {
         inflater.inflate(R.menu.home, menu)
     }
 
+    private val navOptions = NavOptions.Builder()
+        .setEnterAnim(R.anim.ct_enter_from_right)
+        .build()
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, findNavController())
-                || super.onOptionsItemSelected(item)
+        findNavController().navigate(item.itemId, null, navOptions)
+        return true
     }
 }

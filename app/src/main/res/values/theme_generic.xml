@@ -12,7 +12,7 @@
         <item name="CTSecondaryColor">#007585</item>
     </style>
 
-    <style name="GenericLightTheme" parent="CTLightTheme">
+    <style name="GenericLightTheme" parent="CTLightThemeTest">
         <item name="colorPrimary">@color/genericLightPrimary</item>
         <item name="CTPrimaryColor">@color/genericLightPrimary</item>
         <item name="colorPrimaryDark">@color/genericLightDarkPrimary</item>
@@ -21,5 +21,6 @@
         <item name="colorAccent">@color/genericLightAccent</item>
         <item name="CTCTAColor">#EB6401</item>
         <item name="CTSecondaryColor">#007585</item>
+        <item name="CTSecondaryActionColor">@color/genericLightAccent</item>
     </style>
 </resources>
