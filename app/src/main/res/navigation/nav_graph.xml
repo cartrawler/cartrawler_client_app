@@ -21,10 +21,14 @@
             app:destination="@id/palettesFragment" />
         <action
             android:id="@+id/action_Settings_to_countriesListFragment"
-            app:destination="@id/countriesListFragment" />
+            app:destination="@id/countriesListFragment"
+            app:enterAnim="@anim/ct_slide_in_up"
+            app:exitAnim="@anim/ct_slide_out_down" />
         <action
             android:id="@+id/action_settingsFragment_to_currenciesListFragment"
-            app:destination="@id/currenciesListFragment" />
+            app:destination="@id/currenciesListFragment"
+            app:enterAnim="@anim/ct_slide_in_up"
+            app:exitAnim="@anim/ct_slide_out_down" />
     </fragment>
 
     <fragment
@@ -36,23 +40,11 @@
         android:id="@+id/countriesListFragment"
         android:name="com.hisham.ctintegrationsample.searchlist.countrylist.CountryListFragment"
         android:label="@string/action_country"
-        tools:layout="@layout/search_list_view" >
-        <action
-            android:id="@+id/action_countriesListFragment_to_settingsFragment"
-            app:enterAnim="@anim/ct_slide_in_up"
-            app:exitAnim="@anim/ct_slide_out_down"
-            app:popUpTo="@id/settingsFragment" />
-    </fragment>
+        tools:layout="@layout/search_list_view" />
 
     <fragment
         android:id="@+id/currenciesListFragment"
         android:name="com.hisham.ctintegrationsample.searchlist.currencylist.CurrencyListFragment"
         android:label="@string/action_currency"
-        tools:layout="@layout/search_list_view" >
-        <action
-            android:id="@+id/action_currenciesListFragment_to_settingsFragment"
-            app:enterAnim="@anim/ct_slide_in_up"
-            app:exitAnim="@anim/ct_slide_out_down"
-            app:popUpTo="@id/settingsFragment" />
-    </fragment>
+        tools:layout="@layout/search_list_view" />
 </navigation>
