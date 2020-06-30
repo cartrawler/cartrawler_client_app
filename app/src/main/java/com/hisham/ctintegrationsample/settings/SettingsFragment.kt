@@ -44,7 +44,7 @@ class SettingsFragment : BaseFragment() {
         }
 
         currencyView.apply {
-            val currencyISO = localStorage.currency() ?: "EUR"
+            val currencyISO = localStorage.currency
             val currency = Currency.getInstance(currencyISO)
             value(currency.displayName)
             currencyView.setOnClickListener {
@@ -54,7 +54,7 @@ class SettingsFragment : BaseFragment() {
         }
 
         countryView.apply {
-            val countryISO = localStorage.countryISO() ?: "IE"
+            val countryISO = localStorage.country
             val country = Locale("", countryISO)
             value(country.displayName)
             countryView.setOnClickListener {

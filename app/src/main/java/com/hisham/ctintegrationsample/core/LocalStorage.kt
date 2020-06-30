@@ -18,6 +18,14 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         get() = loadPalette()
         set(value) = savePalette(value)
 
+    var country: String
+        get() = countryISO()
+        set(value) = saveCountry(value)
+
+    var currency: String
+        get() = currency()
+        set(value) = saveCurrency(value)
+
     private fun savePalette(paletteDetails: PaletteDetails) {
         sharedPrefs.edit {
             putInt(KEY_THEME_NAME, paletteDetails.name)
@@ -40,21 +48,21 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         }
     }
 
-    fun saveCurrency(value: String) {
+    private fun saveCurrency(value: String) {
         sharedPrefs.edit {
             putString(KEY_CURRENCY_VALUE, value)
         }
     }
 
-    fun currency(): String? = sharedPrefs.run {
-            getString(KEY_CURRENCY_VALUE, "EUR")
+    private fun currency(): String = sharedPrefs.run {
+            getString(KEY_CURRENCY_VALUE, "EUR") ?: "EUR"
     }
 
-    fun countryISO(): String? = sharedPrefs.run {
-        getString(KEY_COUNTRY_ISO_VALUE, "IE")
+    private fun countryISO(): String = sharedPrefs.run {
+        getString(KEY_COUNTRY_ISO_VALUE, "IE") ?: "IE"
     }
 
-    fun saveCountry(value: String) {
+    private fun saveCountry(value: String) {
         sharedPrefs.edit {
             putString(KEY_COUNTRY_ISO_VALUE, value)
         }
