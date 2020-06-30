@@ -1,17 +1,14 @@
 package com.hisham.ctintegrationsample.searchlist.currencylist
 
 import com.hisham.ctintegrationsample.core.LocalStorage
+import com.hisham.ctintegrationsample.searchlist.AbsSearchUseCase
 import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import java.util.*
 import javax.inject.Inject
 
-class CurrencyListUseCase @Inject constructor(private val localStorage: LocalStorage) {
+class CurrencyListUseCase @Inject constructor(storage: LocalStorage) : AbsSearchUseCase(storage) {
 
-    fun updateCurrency(value: String) {
-        localStorage.saveCurrency(value)
-    }
-
-    fun fetchCurrencies(): List<SearchListItem.Currency> {
+    override fun fetch(): List<SearchListItem> {
         val currencies = Currency.getAvailableCurrencies().toList()
         val currencyDataItems = mutableListOf<SearchListItem.Currency>()
         currencies.map {

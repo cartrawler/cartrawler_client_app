@@ -1,17 +1,14 @@
 package com.hisham.ctintegrationsample.searchlist.countrylist
 
 import com.hisham.ctintegrationsample.core.LocalStorage
+import com.hisham.ctintegrationsample.searchlist.AbsSearchUseCase
 import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import java.util.*
 import javax.inject.Inject
 
-class CountryListUseCase @Inject constructor(private val localStorage: LocalStorage) {
+class CountryListUseCase @Inject constructor(storage: LocalStorage) : AbsSearchUseCase(storage) {
 
-    fun updateSelectedValue(value: String) {
-        localStorage.saveCountry(value)
-    }
-
-    fun fetchCountries(): List<SearchListItem.Country> {
+    override fun fetch(): List<SearchListItem> {
         val countryDataItems = mutableListOf<SearchListItem.Country>()
         val isoCountries = Locale.getISOCountries().asList()
         isoCountries.map {
