@@ -36,7 +36,8 @@
     <!-- SearchView -->
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="queryHint">@string/search_hint</item>
-        <item name="searchHintIcon">@drawable/ct_search_black_24dp</item>
         <item name="queryBackground">@android:color/transparent</item>
+        <item name="closeIcon">@drawable/ct_close_black_24dp</item>
+        <item name="searchHintIcon">@null</item>
     </style>
 </resources>
