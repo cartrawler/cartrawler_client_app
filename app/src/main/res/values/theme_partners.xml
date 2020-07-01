@@ -20,7 +20,7 @@
         <item name="colorAccent">@color/norwegianAccent</item>
         <item name="CTCTAColor">@color/norwegianAccent</item>
         <item name="CTPrimaryLightColor">#D71C3B</item>
-        <item name="CTSecondaryActionColor">#007585</item>
+        <item name="CTSecondaryActionColor">#003E50</item>
     </style>
 
     <style name="ItakaTheme" parent="CTLightThemeTest">
