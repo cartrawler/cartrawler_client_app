@@ -15,12 +15,6 @@
         <item name="CTAccentColor">@color/colorAccent</item>
 
         <item name="searchViewStyle">@style/SearchViewStyle</item>
-
-
-        <!--        <item name="CTCTAColor">@color/MainYellow</item> // Was CTAccentColor (default: colorAccent)-->
-        <!--        <item name="CTCTATextColor">@color/DarkBlue</item> // New color (default: white)-->
-        <!--        <item name="CTSecondaryActionColor">@color/MainYellow</item> //Optional Colours-->
-        <!--        <item name="CTSecondaryActionTextColor">@color/DarkBlue</item> //Optional Colours-->
     </style>
 
     <style name="AppTheme.NoActionBar">

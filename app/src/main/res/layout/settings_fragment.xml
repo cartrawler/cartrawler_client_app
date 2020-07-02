@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,24 +13,52 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         app:settingsShowPalette="true"
-        app:settingsTitle="Theme"
-        app:settingsValue="Generic Dark" />
+        app:settingsTitle="@string/action_theme"
+        tools:settingsValue="Generic Dark" />
 
-    <com.hisham.ctintegrationsample.settings.views.SettingsView
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/currencyView"
+        style="@style/CTTextInputLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:settingsTitle="Currency"
-        app:settingsValue="Euro" />
+        android:hint="@string/currency"
+        app:hintAnimationEnabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <com.hisham.ctintegrationsample.settings.views.SettingsView
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/CTEditTextReadOnlyStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:ellipsize="end"
+            android:inputType="none"
+            android:minHeight="60dp"
+            android:singleLine="true"
+            tools:text="EUR" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/countryView"
+        style="@style/CTTextInputLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        app:settingsTitle="@string/Country.Region"
-        app:settingsValue="Ireland" />
+        android:hint="@string/Country.Region"
+        app:hintAnimationEnabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/CTEditTextReadOnlyStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:inputType="none"
+            android:minHeight="60dp"
+            android:singleLine="true"
+            tools:text="Ireland" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="match_parent"

@@ -2,7 +2,7 @@ package com.hisham.ctintegrationsample.settings.views
 
 import android.content.Context
 import android.util.AttributeSet
-import android.widget.FrameLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.hisham.ctintegrationsample.R
 import kotlinx.android.synthetic.main.settings_view.view.*
@@ -11,7 +11,7 @@ class SettingsView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr) {
+) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     init {
         inflate(context, R.layout.settings_view, this)
@@ -20,18 +20,20 @@ class SettingsView @JvmOverloads constructor(
         try {
             title(a.getString(R.styleable.SettingsView_settingsTitle) ?: "")
             value(a.getString(R.styleable.SettingsView_settingsValue) ?: "")
-            paletteView.isVisible = a.getBoolean(R.styleable.SettingsView_settingsShowPalette, false)
+            paletteView.isVisible =
+                a.getBoolean(R.styleable.SettingsView_settingsShowPalette, false)
         } finally {
             a.recycle()
         }
     }
 
     fun title(title: String) {
-        titleTv.text = title
+        settingsTitleView.hint = title
+
     }
 
     fun value(value: String) {
-        valueTv.text = value
+        settingsTitleView.editText?.setText(value)
     }
 
     fun palette(primary: Int, primaryDark: Int, accent: Int?) {
@@ -39,5 +41,10 @@ class SettingsView @JvmOverloads constructor(
             apply(primary, primaryDark, accent)
             isVisible = true
         }
+    }
+
+    fun onClick(callback: () -> Unit) {
+        settingsValueView.setOnClickListener { callback() }
+        paletteView.setOnClickListener { callback() }
     }
 }

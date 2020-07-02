@@ -37,29 +37,33 @@ class SettingsFragment : BaseFragment() {
         themeView.apply {
             value(getString(name))
             palette(primary, dark, accent)
-            setOnClickListener {
-                it.findNavController()
+            onClick {
+                findNavController()
                     .navigate(SettingsFragmentDirections.actionSettingsToPalettesFragment())
             }
         }
 
+        val currencyISO = localStorage.currency
+        val currency = Currency.getInstance(currencyISO)
         currencyView.apply {
-            val currencyISO = localStorage.currency
-            val currency = Currency.getInstance(currencyISO)
-            value(currency.displayName)
-            currencyView.setOnClickListener {
-                it.findNavController()
-                    .navigate(SettingsFragmentDirections.actionSettingsFragmentToCurrenciesListFragment())
+            editText?.apply {
+                setText(currency.displayName)
+                setOnClickListener {
+                    findNavController()
+                        .navigate(SettingsFragmentDirections.actionSettingsFragmentToCurrenciesListFragment())
+                }
             }
         }
 
+        val countryISO = localStorage.country
+        val country = Locale("", countryISO)
         countryView.apply {
-            val countryISO = localStorage.country
-            val country = Locale("", countryISO)
-            value(country.displayName)
-            countryView.setOnClickListener {
-                it.findNavController()
-                    .navigate(SettingsFragmentDirections.actionSettingsToCountriesListFragment())
+            editText?.apply {
+                setText(country.displayName)
+                setOnClickListener {
+                    findNavController()
+                        .navigate(SettingsFragmentDirections.actionSettingsToCountriesListFragment())
+                }
             }
         }
     }
