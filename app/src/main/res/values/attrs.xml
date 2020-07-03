@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="SettingsView">
-        <attr name="settingsTitle" format="string"/>
-        <attr name="settingsValue" format="string"/>
-        <!-- default value is false -->
-        <attr name="settingsShowPalette" format="boolean"/>
-    </declare-styleable>
-</resources>
