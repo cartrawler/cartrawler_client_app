@@ -41,6 +41,8 @@ abstract class AbsSearchFragment<T : SearchListItem> : BaseFragment() {
 
         searchItem.expandActionView()
 
+        searchView.clearFocus()
+
         searchItem.setOnActionExpandListener(object: MenuItem.OnActionExpandListener {
             override fun onMenuItemActionExpand(p0: MenuItem?): Boolean {
                 return false

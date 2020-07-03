@@ -81,7 +81,7 @@ object PalettesFactory {
                 clientId = R.string.partnerGoVoyagesClientId,
                 primary = R.color.goVoyagesPrimary,
                 primaryDark = R.color.goVoyagesDarkPrimary,
-                accent = null
+                accent = R.color.goVoyagesAccent
             ),
             buildPaletteItem(
                 currentSelectedName,

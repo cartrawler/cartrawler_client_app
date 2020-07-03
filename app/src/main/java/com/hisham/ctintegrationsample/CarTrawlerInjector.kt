@@ -81,17 +81,19 @@ object CarTrawlerInjector {
             "D14 R7V2",
             countryISO,
             "EZY130",
-            "29")
+            null)
     }
 
     private fun getPickUpDate(): GregorianCalendar {
-        return GregorianCalendar.getInstance() as GregorianCalendar
+        return (GregorianCalendar.getInstance() as GregorianCalendar).apply {
+            add(GregorianCalendar.DAY_OF_MONTH, 7)
+        }
     }
 
     private fun getDropOffDate(): GregorianCalendar {
         val rentalPeriodDays = 2
 
-        val dropOfDateTime = GregorianCalendar.getInstance() as GregorianCalendar
+        val dropOfDateTime = getPickUpDate()
         dropOfDateTime.add(GregorianCalendar.DAY_OF_MONTH, rentalPeriodDays)
         return dropOfDateTime
     }

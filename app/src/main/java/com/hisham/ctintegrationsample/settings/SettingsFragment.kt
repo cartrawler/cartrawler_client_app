@@ -34,32 +34,37 @@ class SettingsFragment : BaseFragment() {
 
         val (name, _, primary, dark, accent) = localStorage.palette
 
-        themeView.apply {
-            value(getString(name))
-            palette(primary, dark, accent)
+        themeView.editText?.apply {
+            setText(name)
             setOnClickListener {
-                it.findNavController()
+                findNavController()
                     .navigate(SettingsFragmentDirections.actionSettingsToPalettesFragment())
             }
         }
 
+        themePaletteView.apply(primary, dark, accent)
+
+        val currencyISO = localStorage.currency
+        val currency = Currency.getInstance(currencyISO)
         currencyView.apply {
-            val currencyISO = localStorage.currency
-            val currency = Currency.getInstance(currencyISO)
-            value(currency.displayName)
-            currencyView.setOnClickListener {
-                it.findNavController()
-                    .navigate(SettingsFragmentDirections.actionSettingsFragmentToCurrenciesListFragment())
+            editText?.apply {
+                setText(currency.displayName)
+                setOnClickListener {
+                    findNavController()
+                        .navigate(SettingsFragmentDirections.actionSettingsFragmentToCurrenciesListFragment())
+                }
             }
         }
 
+        val countryISO = localStorage.country
+        val country = Locale("", countryISO)
         countryView.apply {
-            val countryISO = localStorage.country
-            val country = Locale("", countryISO)
-            value(country.displayName)
-            countryView.setOnClickListener {
-                it.findNavController()
-                    .navigate(SettingsFragmentDirections.actionSettingsToCountriesListFragment())
+            editText?.apply {
+                setText(country.displayName)
+                setOnClickListener {
+                    findNavController()
+                        .navigate(SettingsFragmentDirections.actionSettingsToCountriesListFragment())
+                }
             }
         }
     }

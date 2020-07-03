@@ -45,6 +45,7 @@
     <string name="partnerGoVoyagesClientId">315710</string>
     <color name="goVoyagesPrimary">#53B417</color>
     <color name="goVoyagesDarkPrimary">#53B417</color>
+    <color name="goVoyagesAccent">#53B417</color>
 
     <string name="partnerOpodo">Opodo</string>
     <string name="partnerOpodoClientId">314945</string>
@@ -64,7 +65,7 @@
     <color name="travelStartDarkPrimary">#FFFFFF</color>
     <color name="travelStartAccent">#1CB3F5</color>
 
-    <string name="partnerFinno">Finno</string>
+    <string name="partnerFinno">Finn.no</string>
     <string name="partnerFinnoClientId">535724</string>
     <color name="finnoPrimary">#FFFFFF</color>
     <color name="finnoDarkPrimary">#FFFFFF</color>
