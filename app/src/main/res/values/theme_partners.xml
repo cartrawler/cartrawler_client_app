@@ -88,4 +88,15 @@
         <item name="CTPrimaryLightColor">@color/finnoAccent</item>
         <item name="CTSecondaryActionColor">@color/finnoAccent</item>
     </style>
+
+    <style name="TAPTheme" parent="CTLightTheme">
+        <item name="colorPrimary">@color/TAPPrimary</item>
+        <item name="CTPrimaryColor">@color/TAPPrimary</item>
+        <item name="colorPrimaryDark">@color/TAPDarkPrimary</item>
+        <item name="CTPrimaryDarkColor">@color/TAPDarkPrimary</item>
+        <item name="colorAccent">@color/TAPAccent</item>
+        <item name="CTCTAColor">@color/TAPAccent</item>
+        <item name="CTPrimaryLightColor">@color/TAPAccent</item>
+        <item name="CTSecondaryActionColor">@color/TAPAccent</item>
+    </style>
 </resources>

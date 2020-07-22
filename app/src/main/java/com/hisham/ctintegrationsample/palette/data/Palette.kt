@@ -114,6 +114,14 @@ object PalettesFactory {
                 primary = R.color.finnoPrimary,
                 primaryDark = R.color.finnoDarkPrimary,
                 accent = R.color.finnoAccent
+            ),
+            buildPaletteItem(
+                currentSelectedName,
+                name = R.string.partnerTAP,
+                clientId = R.string.partnerTAPClientId,
+                primary = R.color.TAPPrimary,
+                primaryDark = R.color.TAPDarkPrimary,
+                accent = R.color.TAPAccent
             )
         )
 

@@ -20,7 +20,6 @@ object CarTrawlerInjector {
             .setEnvironment(CartrawlerSDK.Environment.STAGING)
             .setFlightNumberRequired(true)
             .setLogging(true)
-            .setLoyalty("WEST_JET", "WESTJET_REWARDS")
             .setOrderId("123")
             .setPassenger(passenger(countryISO))
             .setVisitorId("123")
@@ -65,6 +64,7 @@ object CarTrawlerInjector {
             R.string.partnerTravelStart -> R.style.TravelStartTheme
             R.string.partnerTravelLink -> R.style.TravellinkTheme
             R.string.partnerFinno -> R.style.FinnoTheme
+            R.string.partnerTAP -> R.style.TAPTheme
             else -> R.style.GenericTheme
         }
     }
@@ -81,7 +81,8 @@ object CarTrawlerInjector {
             "D14 R7V2",
             countryISO,
             "EZY130",
-            null)
+            null,
+            "123456")
     }
 
     private fun getPickUpDate(): GregorianCalendar {
