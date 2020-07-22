@@ -3,13 +3,13 @@
     <string name="carTrawler">CarTrawler</string>
 
     <string name="carTrawlerGeneric">Generic Dark</string>
-    <string name="carTrawlerGenericClientId">512434</string>
+    <string name="carTrawlerGenericClientId">541368</string>
     <color name="genericPrimary">#007585</color>
     <color name="genericDarkPrimary">#004852</color>
     <color name="genericAccent">#EB6401</color>
 
     <string name="carTrawlerGenericLight">Generic Light</string>
-    <string name="carTrawlerGenericLightClientId">512434</string>
+    <string name="carTrawlerGenericLightClientId">541368</string>
     <color name="genericLightPrimary">#FFFFFF</color>
     <color name="genericLightDarkPrimary">#FFFFFF</color>
     <color name="genericLightAccent">#EB6401</color>
@@ -70,4 +70,10 @@
     <color name="finnoPrimary">#FFFFFF</color>
     <color name="finnoDarkPrimary">#FFFFFF</color>
     <color name="finnoAccent">#0064FC</color>
+
+    <string name="partnerTAP">TAP</string>
+    <string name="partnerTAPClientId">861936</string>
+    <color name="TAPPrimary">#FFFFFF</color>
+    <color name="TAPDarkPrimary">#FFFFFF</color>
+    <color name="TAPAccent">#B5EB56</color>
 </resources>
