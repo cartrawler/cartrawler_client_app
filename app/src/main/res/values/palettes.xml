@@ -76,4 +76,6 @@
     <color name="TAPPrimary">#FFFFFF</color>
     <color name="TAPDarkPrimary">#FFFFFF</color>
     <color name="TAPAccent">#B5EB56</color>
+    <color name="TAPTextColor">#2C2C2C</color>
+    <color name="TAPSecondaryColor">#44A419</color>
 </resources>

@@ -96,7 +96,8 @@
         <item name="CTPrimaryDarkColor">@color/TAPDarkPrimary</item>
         <item name="colorAccent">@color/TAPAccent</item>
         <item name="CTCTAColor">@color/TAPAccent</item>
+        <item name="CTCTATextColor">@color/TAPTextColor</item>
         <item name="CTPrimaryLightColor">@color/TAPAccent</item>
-        <item name="CTSecondaryActionColor">@color/TAPAccent</item>
+        <item name="CTSecondaryActionColor">#44A419</item>
     </style>
 </resources>
