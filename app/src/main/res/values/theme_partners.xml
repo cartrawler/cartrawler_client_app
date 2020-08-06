@@ -21,6 +21,11 @@
         <item name="CTCTAColor">@color/norwegianAccent</item>
         <item name="CTPrimaryLightColor">#D71C3B</item>
         <item name="CTSecondaryActionColor">#003E50</item>
+        <item name="CTLoyaltyPrimaryColor">#e5ebed</item>
+        <item name="CTLoyaltyPrimaryTextColor">#003E52</item>
+        <item name="CTLoyaltySecondaryColor">#003E50</item>
+        <item name="CTLoyaltySecondaryTextColor">#FFFFFF</item>
+        <item name="CTLoyaltyTheme">dark</item>
     </style>
 
     <style name="ItakaTheme" parent="CTLightThemeTest">
@@ -99,5 +104,10 @@
         <item name="CTCTATextColor">@color/TAPTextColor</item>
         <item name="CTPrimaryLightColor">@color/TAPAccent</item>
         <item name="CTSecondaryActionColor">#44A419</item>
+        <item name="CTLoyaltyPrimaryColor">#000000</item>
+        <item name="CTLoyaltyPrimaryTextColor">#FFFFFF</item>
+        <item name="CTLoyaltySecondaryColor">#000000</item>
+        <item name="CTLoyaltySecondaryTextColor">#FFFFFF</item>
+        <item name="CTLoyaltyTheme">dark</item>
     </style>
 </resources>
