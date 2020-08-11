@@ -17,7 +17,7 @@ object CarTrawlerInjector {
             .setAccountId("CZ638817950")
             .setCountry(countryISO)
             .setCurrency(currency)
-            .setEnvironment(CartrawlerSDK.Environment.STAGING)
+            .setEnvironment(CartrawlerSDK.Environment.PRODUCTION)
             .setFlightNumberRequired(true)
             .setLogging(true)
             .setOrderId("123")
@@ -30,7 +30,7 @@ object CarTrawlerInjector {
     fun initInPath(activity: Activity, palette: PaletteDetails, currency: String, countryISO: String) {
         CartrawlerSDK.Builder()
             .setRentalInPathClientId(clientId(activity, palette))
-            .setEnvironment(CartrawlerSDK.Environment.STAGING)
+            .setEnvironment(CartrawlerSDK.Environment.PRODUCTION)
             .setCurrency(currency)
             .setCountry(countryISO)
             .setFlightNumberRequired(false)
