@@ -1,10 +1,13 @@
 package com.hisham.ctintegrationsample.settings
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import cartrawler.core.engine.CartrawlerSDK
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.core.LocalStorage
@@ -65,6 +68,22 @@ class SettingsFragment : BaseFragment() {
                     findNavController()
                         .navigate(SettingsFragmentDirections.actionSettingsToCountriesListFragment())
                 }
+            }
+        }
+
+        changeLanguageTv.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+        }
+
+        when(localStorage.environment) {
+            CartrawlerSDK.Environment.PRODUCTION -> environmentRG.check(R.id.productionRBtn)
+            else -> CartrawlerSDK.Environment.STAGING
+        }
+
+        environmentRG.setOnCheckedChangeListener { _, checkedId ->
+            localStorage.environment = when(checkedId) {
+                R.id.productionRBtn -> CartrawlerSDK.Environment.PRODUCTION
+                else -> CartrawlerSDK.Environment.STAGING
             }
         }
     }

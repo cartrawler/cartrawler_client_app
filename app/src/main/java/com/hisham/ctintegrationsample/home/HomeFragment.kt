@@ -35,13 +35,26 @@ class HomeFragment : BaseFragment() {
 
         val currency = localStorage.currency
         val countryISO = localStorage.country
+        val environment = localStorage.environment
 
         startStandaloneBtn.setOnClickListener {
-            CarTrawlerInjector.initStandalone(requireActivity(), localStorage.palette, currency, countryISO)
+            CarTrawlerInjector.initStandalone(
+                requireActivity(),
+                localStorage.palette,
+                currency,
+                countryISO,
+                environment
+            )
         }
 
         inPathBtn.setOnClickListener {
-            CarTrawlerInjector.initInPath(requireActivity(), localStorage.palette, currency, countryISO)
+            CarTrawlerInjector.initInPath(
+                requireActivity(),
+                localStorage.palette,
+                currency,
+                countryISO,
+                environment
+            )
         }
     }
 

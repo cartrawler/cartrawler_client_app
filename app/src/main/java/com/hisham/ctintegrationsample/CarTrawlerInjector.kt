@@ -11,13 +11,19 @@ object CarTrawlerInjector {
     const val REQUEST_CODE_STANDALONE = 123
     const val REQUEST_CODE_IN_PATH = 124
 
-    fun initStandalone(activity: Activity, palette: PaletteDetails, currency: String, countryISO: String) {
+    fun initStandalone(
+        activity: Activity,
+        palette: PaletteDetails,
+        currency: String,
+        countryISO: String,
+        environment: String
+    ) {
         CartrawlerSDK.Builder()
             .setRentalStandAloneClientId(clientId(activity, palette))
             .setAccountId("CZ638817950")
             .setCountry(countryISO)
             .setCurrency(currency)
-            .setEnvironment(CartrawlerSDK.Environment.PRODUCTION)
+            .setEnvironment(environment)
             .setFlightNumberRequired(true)
             .setLogging(true)
             .setOrderId("123")
@@ -27,10 +33,16 @@ object CarTrawlerInjector {
             .startRentalStandalone(activity, REQUEST_CODE_STANDALONE)
     }
 
-    fun initInPath(activity: Activity, palette: PaletteDetails, currency: String, countryISO: String) {
+    fun initInPath(
+        activity: Activity,
+        palette: PaletteDetails,
+        currency: String,
+        countryISO: String,
+        environment: String
+    ) {
         CartrawlerSDK.Builder()
             .setRentalInPathClientId(clientId(activity, palette))
-            .setEnvironment(CartrawlerSDK.Environment.PRODUCTION)
+            .setEnvironment(environment)
             .setCurrency(currency)
             .setCountry(countryISO)
             .setFlightNumberRequired(false)
