@@ -104,6 +104,7 @@
         <item name="CTCTATextColor">@color/TAPTextColor</item>
         <item name="CTPrimaryLightColor">@color/TAPAccent</item>
         <item name="CTSecondaryActionColor">#44A419</item>
+        <item name="CTSecondaryActionTextColor">#FFFFFF</item>
         <item name="CTLoyaltyPrimaryColor">#000000</item>
         <item name="CTLoyaltyPrimaryTextColor">#FFFFFF</item>
         <item name="CTLoyaltySecondaryColor">#000000</item>
