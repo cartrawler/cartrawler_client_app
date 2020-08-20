@@ -70,12 +70,12 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
     }
 
     private fun environment(): String = with(sharedPrefs) {
-        getString(KEY_PRODUCTION_ENVIRONMENT, CartrawlerSDK.Environment.STAGING)
+        getString(KEY_ENVIRONMENT, CartrawlerSDK.Environment.STAGING)
             ?: CartrawlerSDK.Environment.STAGING
     }
 
     private fun saveEnvironment(value: String) = with(sharedPrefs) {
-        edit { putString(KEY_PRODUCTION_ENVIRONMENT, value) }
+        edit { putString(KEY_ENVIRONMENT, value) }
     }
 
     private companion object {
@@ -89,6 +89,6 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
 
         private const val KEY_CURRENCY_VALUE = "KEY_CURRENCY_VALUE"
         private const val KEY_COUNTRY_ISO_VALUE = "KEY_COUNTRY_ISO_VALUE"
-        private const val KEY_PRODUCTION_ENVIRONMENT = "KEY_PRODUCTION_ENVIRONMENT"
+        private const val KEY_ENVIRONMENT = "KEY_ENVIRONMENT"
     }
 }
