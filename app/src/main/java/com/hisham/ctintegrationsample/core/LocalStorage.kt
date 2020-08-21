@@ -3,6 +3,7 @@ package com.hisham.ctintegrationsample.core
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import cartrawler.core.engine.CartrawlerSDK
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.palette.data.PaletteDetails
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -26,6 +27,10 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         get() = currency()
         set(value) = saveCurrency(value)
 
+    var environment: String
+        get() = environment()
+        set(value) = saveEnvironment(value)
+
     private fun savePalette(paletteDetails: PaletteDetails) {
         sharedPrefs.edit {
             putInt(KEY_THEME_NAME, paletteDetails.name)
@@ -48,24 +53,29 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         }
     }
 
-    private fun saveCurrency(value: String) {
-        sharedPrefs.edit {
-            putString(KEY_CURRENCY_VALUE, value)
-        }
+    private fun saveCurrency(value: String) = with(sharedPrefs) {
+        edit { putString(KEY_CURRENCY_VALUE, value) }
     }
 
-    private fun currency(): String = sharedPrefs.run {
-            getString(KEY_CURRENCY_VALUE, "EUR") ?: "EUR"
+    private fun currency(): String = with(sharedPrefs) {
+        getString(KEY_CURRENCY_VALUE, "EUR") ?: "EUR"
     }
 
-    private fun countryISO(): String = sharedPrefs.run {
+    private fun countryISO(): String = with(sharedPrefs) {
         getString(KEY_COUNTRY_ISO_VALUE, "IE") ?: "IE"
     }
 
-    private fun saveCountry(value: String) {
-        sharedPrefs.edit {
-            putString(KEY_COUNTRY_ISO_VALUE, value)
-        }
+    private fun saveCountry(value: String) = with(sharedPrefs) {
+        edit { putString(KEY_COUNTRY_ISO_VALUE, value) }
+    }
+
+    private fun environment(): String = with(sharedPrefs) {
+        getString(KEY_ENVIRONMENT, CartrawlerSDK.Environment.STAGING)
+            ?: CartrawlerSDK.Environment.STAGING
+    }
+
+    private fun saveEnvironment(value: String) = with(sharedPrefs) {
+        edit { putString(KEY_ENVIRONMENT, value) }
     }
 
     private companion object {
@@ -79,5 +89,6 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
 
         private const val KEY_CURRENCY_VALUE = "KEY_CURRENCY_VALUE"
         private const val KEY_COUNTRY_ISO_VALUE = "KEY_COUNTRY_ISO_VALUE"
+        private const val KEY_ENVIRONMENT = "KEY_ENVIRONMENT"
     }
 }

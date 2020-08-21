@@ -6,19 +6,18 @@ buildscript {
         'cartrawlerSdk': "10.7.0",
 
         // kotlin
-        'kotlin'       : '1.3.72',
+        'kotlin'       : '1.4.0',
 
         // Jetpack
         'navigation'   : '2.3.0',
         'hilt'         : '2.28-alpha',
         'hiltViewModel' : '1.0.0-alpha01',
 
-
         // UI
         'material'      : "1.3.0-alpha01",
 
         // Tools
-        'appCenterSdk' : '3.2.1',
+        'appCenterSdk' : '3.3.0',
         'moshi'        : '1.9.3'
     ]
 
