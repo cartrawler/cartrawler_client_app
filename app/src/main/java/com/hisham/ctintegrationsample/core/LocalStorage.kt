@@ -33,23 +33,31 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
 
     private fun savePalette(paletteDetails: PaletteDetails) {
         sharedPrefs.edit {
-            putInt(KEY_THEME_NAME, paletteDetails.name)
-            putInt(KEY_CLIENT_ID, paletteDetails.clientId)
-            putInt(KEY_PRIMARY_COLOUR, paletteDetails.primary)
-            putInt(KEY_PRIMARY_DARK_COLOUR, paletteDetails.primaryDark)
-            paletteDetails.accent?.let { putInt(KEY_ACCENT_COLOUR, it) }
+            putString(KEY_THEME_NAME, context.getResourceNameById(paletteDetails.name))
+            putString(KEY_CLIENT_ID, context.getResourceNameById(paletteDetails.clientId))
+            putString(KEY_PRIMARY_COLOUR, context.getResourceNameById(paletteDetails.primary))
+            putString(KEY_PRIMARY_DARK_COLOUR, context.getResourceNameById(paletteDetails.primaryDark))
+            paletteDetails.accent?.let { putString(KEY_ACCENT_COLOUR, context.getResourceNameById(it)) }
         }
     }
 
     private fun loadPalette(): PaletteDetails {
-        return sharedPrefs.run {
-            PaletteDetails(
-                getInt(KEY_THEME_NAME, R.string.carTrawlerGeneric),
-                getInt(KEY_CLIENT_ID, R.string.carTrawlerGenericClientId),
-                getInt(KEY_PRIMARY_COLOUR, R.color.genericPrimary),
-                getInt(KEY_PRIMARY_DARK_COLOUR, R.color.genericDarkPrimary),
-                getInt(KEY_ACCENT_COLOUR, R.color.genericAccent)
-            )
+        return with(sharedPrefs) {
+            with(context) {
+                val defaultTheme = getResourceNameById(R.string.carTrawlerGeneric)
+                val defaultClientId = getResourceNameById(R.string.carTrawlerGenericClientId)
+                val defaultPrimaryColour = getResourceNameById(R.color.genericPrimary)
+                val defaultPrimaryDarkColour = getResourceNameById(R.color.genericDarkPrimary)
+                val defaultAccentColour = getResourceNameById(R.color.genericAccent)
+
+                PaletteDetails(
+                    getStringIdByName(getStringOrDefault(KEY_THEME_NAME, defaultTheme)),
+                    getStringIdByName(getStringOrDefault(KEY_CLIENT_ID, defaultClientId)),
+                    getColourIdByName(getStringOrDefault(KEY_PRIMARY_COLOUR, defaultPrimaryColour)),
+                    getColourIdByName(getStringOrDefault(KEY_PRIMARY_DARK_COLOUR, defaultPrimaryDarkColour)),
+                    getColourIdByName(getStringOrDefault(KEY_ACCENT_COLOUR, defaultAccentColour))
+                )
+            }
         }
     }
 
@@ -81,11 +89,11 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
     private companion object {
         private const val CT_APP_SHARED_PREFS = "com.cartrawler.android.app"
 
-        private const val KEY_THEME_NAME = "KEY_THEME_NAME"
-        private const val KEY_CLIENT_ID = "KEY_CLIENT_ID"
-        private const val KEY_PRIMARY_COLOUR = "KEY_PRIMARY_COLOUR"
-        private const val KEY_PRIMARY_DARK_COLOUR = "KEY_PRIMARY_DARK_COLOUR"
-        private const val KEY_ACCENT_COLOUR = "KEY_ACCENT_COLOUR"
+        private const val KEY_THEME_NAME = "KEY_THEME_NAME2"
+        private const val KEY_CLIENT_ID = "KEY_CLIENT_ID2"
+        private const val KEY_PRIMARY_COLOUR = "KEY_PRIMARY_COLOUR2"
+        private const val KEY_PRIMARY_DARK_COLOUR = "KEY_PRIMARY_DARK_COLOUR2"
+        private const val KEY_ACCENT_COLOUR = "KEY_ACCENT_COLOUR2"
 
         private const val KEY_CURRENCY_VALUE = "KEY_CURRENCY_VALUE"
         private const val KEY_COUNTRY_ISO_VALUE = "KEY_COUNTRY_ISO_VALUE"
