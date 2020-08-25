@@ -77,7 +77,7 @@ class SettingsFragment : BaseFragment() {
 
         when(localStorage.environment) {
             CartrawlerSDK.Environment.PRODUCTION -> environmentRG.check(R.id.productionRBtn)
-            else -> CartrawlerSDK.Environment.STAGING
+            else -> environmentRG.check(R.id.developmentRBtn)
         }
 
         environmentRG.setOnCheckedChangeListener { _, checkedId ->
