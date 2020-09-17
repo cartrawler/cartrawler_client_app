@@ -3,10 +3,10 @@
 buildscript {
     ext.versions = [
         //ct
-        'cartrawlerSdk': "10.8.0",
+        'cartrawlerSdk': "10.9.0",
 
         // kotlin
-        'kotlin'       : '1.4.0',
+        'kotlin'       : '1.4.10',
 
         // Jetpack
         'navigation'   : '2.3.0',
@@ -46,6 +46,13 @@ allprojects {
         repositories {
             maven {
                 url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
+                credentials {
+                    username = "admin"
+                    password = "xhszNx08b57EjoQczLTt"
+                }
+            }
+            maven {
+                url "http://artifactory.cartrawler.com/artifactory/libs-snapshot-local"
                 credentials {
                     username = "admin"
                     password = "xhszNx08b57EjoQczLTt"
