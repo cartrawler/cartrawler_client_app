@@ -3,7 +3,7 @@
 buildscript {
     ext.versions = [
         //ct
-        'cartrawlerSdk': "10.9.0",
+        'cartrawlerSdk': "10.10.0-SNAPSHOT",
 
         // kotlin
         'kotlin'       : '1.4.10',
