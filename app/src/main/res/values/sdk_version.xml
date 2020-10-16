@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="sdk_version">Version 10.11.0-SNAPSHOT</string>
+    <string name="sdk_version">Version 10.11.0</string>
     <string name="sdk_size">3.39 MB</string>
-    <string name="sdk_release_date">Released 15/10/2020</string>
+    <string name="sdk_release_date">Released 16/10/2020</string>
 </resources>
