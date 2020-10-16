@@ -19,10 +19,10 @@
         <action
             android:id="@+id/action_Settings_to_palettesFragment"
             app:destination="@id/palettesFragment"
-            app:exitAnim="@anim/ct_exit_to_right"
-            app:enterAnim="@anim/ct_enter_from_right"
-            app:popEnterAnim="@anim/ct_enter_from_right"
-            app:popExitAnim="@anim/ct_exit_to_right"/>
+            app:enterAnim="@anim/ct_slide_in_up"
+            app:exitAnim="@anim/ct_slide_out_down"
+            app:popEnterAnim="@anim/ct_slide_in_up"
+            app:popExitAnim="@anim/ct_slide_out_down"/>
         <action
             android:id="@+id/action_Settings_to_countriesListFragment"
             app:destination="@id/countriesListFragment"
