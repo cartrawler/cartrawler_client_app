@@ -121,7 +121,7 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginTop="24dp"
-            android:background="@color/divider"
+            android:background="@color/CT_Grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/changeLanguageTv" />
@@ -139,7 +139,7 @@
 
         <TextView
             android:id="@+id/environmentTv"
-            style="@style/Cartrawler.Text.ListItem.XLarge"
+            style="@style/CTText.ListItem.XLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -189,7 +189,7 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginTop="24dp"
-            android:background="@color/divider"
+            android:background="@color/CT_Grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/environmentDisclaimerTv" />
