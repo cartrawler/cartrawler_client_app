@@ -1,16 +1,12 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="CTLightTheme" />
+    <style name="AppTheme" parent="CTDayNightTheme" />
 
     <style name="ClientAppTheme" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
-        <item name="CTPrimaryColor">@color/colorPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/colorPrimaryDark</item>
-        <item name="CTPrimaryLightColor">@color/colorPrimaryLight</item>
 
         <item name="searchViewStyle">@style/SearchViewStyle</item>
     </style>

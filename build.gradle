@@ -3,10 +3,10 @@
 buildscript {
     ext.versions = [
         //ct
-        'cartrawlerSdk': "10.13.0",
+        'cartrawlerSdk': "11.0.0-SNAPSHOT",
 
         // kotlin
-        'kotlin'       : '1.4.10',
+        'kotlin'       : '1.4.20',
 
         // Jetpack
         'navigation'   : '2.3.0',
@@ -32,7 +32,7 @@ buildscript {
         maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:4.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.navigation}"
         classpath "com.google.dagger:hilt-android-gradle-plugin:${versions.hilt}"

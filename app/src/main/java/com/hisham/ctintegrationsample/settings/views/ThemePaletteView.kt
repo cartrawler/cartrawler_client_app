@@ -32,7 +32,7 @@ class ThemePaletteView @JvmOverloads constructor(
             tintImage(accentColourIndicatorView, accent)
             accentColourIndicatorView.isVisible = true
         } else {
-            tintImage(accentColourIndicatorView, R.color.CT_White)
+            tintImage(accentColourIndicatorView, R.color.ct_white)
             accentColourIndicatorView.isInvisible = true
         }
     }
