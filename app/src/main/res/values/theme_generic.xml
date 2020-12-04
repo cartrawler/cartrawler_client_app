@@ -9,7 +9,7 @@
         <item name="colorSecondary">@color/genericAccent</item>
         <item name="colorOnSecondary">@color/ct_white</item>
         <item name="colorSecondaryVariant">@color/genericPrimary</item>
-        <item name="ctIllustrationColor">@color/genericLightPrimary</item>
+        <item name="ctIllustrationColor">#37A4B8</item>
     </style>
     <style name="GenericLightTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/genericLightPrimary</item>
@@ -25,6 +25,6 @@
         <item name="ctLoyaltySecondaryTextColor">@color/ct_white</item>
         <item name="CTLoyaltyTheme">dark</item>
         <item name="ctProgressBarColor">@color/genericLightAccent</item>
-        <item name="ctIllustrationColor">@color/genericLightPrimary</item>
+        <item name="ctIllustrationColor">#37A4B8</item>
     </style>
 </resources>
