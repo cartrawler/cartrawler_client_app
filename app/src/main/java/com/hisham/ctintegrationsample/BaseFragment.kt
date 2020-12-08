@@ -9,7 +9,10 @@ open class BaseFragment : Fragment() {
 
     fun toolbarIcon(@DrawableRes drawableResId: Int) {
         requireActivity().findViewById<Toolbar>(R.id.toolbar).logo = if (drawableResId != 0) {
-            ContextCompat.getDrawable(requireContext(), drawableResId)
+            ContextCompat.getDrawable(requireContext(), R.drawable.ic_app).run {
+                this?.setTint(ContextCompat.getColor(requireContext(), R.color.ct_black))
+                this
+            }
         } else {
             null
         }

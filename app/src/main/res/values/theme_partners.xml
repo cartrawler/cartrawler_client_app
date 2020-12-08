@@ -13,7 +13,7 @@
 
     <style name="NorwegianTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/norwegianPrimary</item>
-        <item name="colorOnPrimary">@color/ct_white</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
         <item name="colorPrimaryVariant">@color/norwegianDarkPrimary</item>
         <item name="android:statusBarColor">@color/norwegianDarkPrimary</item>
         <item name="colorSecondary">@color/norwegianAccent</item>
