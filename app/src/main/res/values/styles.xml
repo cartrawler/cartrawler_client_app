@@ -6,13 +6,13 @@
     <style name="ClientAppTheme" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/ct_black</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-
-        <item name="searchViewStyle">@style/SearchViewStyle</item>
 
         <item name="colorSecondary">@color/genericPrimary</item>
         <item name="colorOnSecondary">@color/ct_white</item>
+
+        <item name="colorControlNormal">@color/ct_white</item>
+
+        <item name="searchViewStyle">@style/SearchViewStyle</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -21,9 +21,6 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <!-- Toolbar -->
-    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- SearchView -->
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">

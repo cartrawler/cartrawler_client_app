@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         toolbar.setupWithNavController(navController, appBarConfiguration)
         title = ""
-//        delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
