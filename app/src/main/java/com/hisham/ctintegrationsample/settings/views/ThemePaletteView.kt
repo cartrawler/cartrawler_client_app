@@ -6,13 +6,14 @@ import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.hisham.ctintegrationsample.R
-import kotlinx.android.synthetic.main.theme_palette_view.view.*
+import com.hisham.ctintegrationsample.databinding.ThemePaletteViewBinding
 
 class ThemePaletteView @JvmOverloads constructor(
     context: Context,
@@ -20,11 +21,9 @@ class ThemePaletteView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
-    init {
-        inflate(context, R.layout.theme_palette_view, this)
-    }
+    private val binding = ThemePaletteViewBinding.inflate(LayoutInflater.from(context), this, true)
 
-    fun apply(primary: Int, primaryDark: Int, accent: Int?) {
+    fun apply(primary: Int, primaryDark: Int, accent: Int?) = with(binding) {
         tintImage(primaryColourIndicatorView, primary)
         tintImage(primaryDarkColourIndicatorView, primaryDark)
 

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.hisham.ctintegrationsample.R
+import com.hisham.ctintegrationsample.databinding.SearchListItemViewBinding
 
 abstract class AbsSearchAdapter<T>(private val list: List<T>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -12,11 +12,11 @@ abstract class AbsSearchAdapter<T>(private val list: List<T>) : RecyclerView.Ada
 
     private var isFiltering: Boolean = false
     protected var filteredList = mutableListOf<T>()
+    protected lateinit var binding: SearchListItemViewBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.search_list_item_view, parent, false)
-        return createViewHolder(view)
+        binding = SearchListItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return createViewHolder(binding.root)
     }
 
     override fun getItemCount(): Int {

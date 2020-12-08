@@ -8,8 +8,8 @@ import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.CarTrawlerInjector
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.core.LocalStorage
+import com.hisham.ctintegrationsample.databinding.HomeFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.home_fragment.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -18,14 +18,16 @@ class HomeFragment : BaseFragment() {
     @Inject
     lateinit var localStorage: LocalStorage
 
+    private lateinit var binding: HomeFragmentBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.home_fragment, container, false)
+    ): View {
+        binding = HomeFragmentBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,7 +39,7 @@ class HomeFragment : BaseFragment() {
         val countryISO = localStorage.country
         val environment = localStorage.environment
 
-        startStandaloneBtn.setOnClickListener {
+        binding.startStandaloneBtn.setOnClickListener {
             CarTrawlerInjector.initStandalone(
                 requireActivity(),
                 localStorage.palette,
@@ -47,7 +49,7 @@ class HomeFragment : BaseFragment() {
             )
         }
 
-        inPathBtn.setOnClickListener {
+        binding.inPathBtn.setOnClickListener {
             CarTrawlerInjector.initInPath(
                 requireActivity(),
                 localStorage.palette,

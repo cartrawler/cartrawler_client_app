@@ -4,10 +4,9 @@ import android.view.View
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.hisham.ctintegrationsample.R
+import com.hisham.ctintegrationsample.searchlist.AbsSearchAdapter
 import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import com.hisham.ctintegrationsample.searchlist.views.DiffUtilsCallback
-import com.hisham.ctintegrationsample.searchlist.AbsSearchAdapter
-import kotlinx.android.synthetic.main.search_list_item_view.view.*
 import java.util.*
 
 class CurrencyAdapter(private val list: List<SearchListItem.Currency>) : AbsSearchAdapter<SearchListItem.Currency>(list) {
@@ -35,12 +34,12 @@ class CurrencyAdapter(private val list: List<SearchListItem.Currency>) : AbsSear
 
     inner class CurrencyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(currency: SearchListItem.Currency) {
-            itemView.title.text = itemView.context.getString(
+            binding.title.text = itemView.context.getString(
                 R.string.currency_format,
                 currency.currencyISO,
                 currency.currencyName
             )
-            itemView.setOnClickListener {
+            binding.root.setOnClickListener {
                 itemCallback?.invoke(currency)
             }
         }

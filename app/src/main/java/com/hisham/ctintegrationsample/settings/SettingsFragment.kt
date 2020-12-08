@@ -11,8 +11,8 @@ import cartrawler.core.engine.CartrawlerSDK
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.core.LocalStorage
+import com.hisham.ctintegrationsample.databinding.SettingsFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.settings_fragment.*
 import java.util.*
 import javax.inject.Inject
 
@@ -22,12 +22,15 @@ class SettingsFragment : BaseFragment() {
     @Inject
     lateinit var localStorage: LocalStorage
 
+    private lateinit var binding: SettingsFragmentBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.settings_fragment, container, false)
+    ): View {
+        binding = SettingsFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,19 +40,19 @@ class SettingsFragment : BaseFragment() {
 
         val (name, _, primary, dark, accent) = localStorage.palette
 
-        themeView.editText?.apply {
+        binding.themeView.editText?.apply {
             setText(name)
             setOnClickListener {
-                findNavController()
+                it.findNavController()
                     .navigate(SettingsFragmentDirections.actionSettingsToPalettesFragment())
             }
         }
 
-        themePaletteView.apply(primary, dark, accent)
+        binding.themePaletteView.apply(primary, dark, accent)
 
         val currencyISO = localStorage.currency
         val currency = Currency.getInstance(currencyISO)
-        currencyView.apply {
+        binding.currencyView.apply {
             editText?.apply {
                 setText(currency.displayName)
                 setOnClickListener {
@@ -61,7 +64,7 @@ class SettingsFragment : BaseFragment() {
 
         val countryISO = localStorage.country
         val country = Locale("", countryISO)
-        countryView.apply {
+        binding.countryView.apply {
             editText?.apply {
                 setText(country.displayName)
                 setOnClickListener {
@@ -71,16 +74,16 @@ class SettingsFragment : BaseFragment() {
             }
         }
 
-        changeLanguageTv.setOnClickListener {
+        binding.changeLanguageTv.setOnClickListener {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
 
         when(localStorage.environment) {
-            CartrawlerSDK.Environment.PRODUCTION -> environmentRG.check(R.id.productionRBtn)
-            else -> environmentRG.check(R.id.developmentRBtn)
+            CartrawlerSDK.Environment.PRODUCTION -> binding.environmentRG.check(R.id.productionRBtn)
+            else -> binding.environmentRG.check(R.id.developmentRBtn)
         }
 
-        environmentRG.setOnCheckedChangeListener { _, checkedId ->
+        binding.environmentRG.setOnCheckedChangeListener { _, checkedId ->
             localStorage.environment = when(checkedId) {
                 R.id.productionRBtn -> CartrawlerSDK.Environment.PRODUCTION
                 else -> CartrawlerSDK.Environment.STAGING

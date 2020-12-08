@@ -6,11 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hisham.ctintegrationsample.BaseFragment
-import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.core.LocalStorage
+import com.hisham.ctintegrationsample.databinding.PalettesFragmentBinding
 import com.hisham.ctintegrationsample.palette.data.PalettesFactory
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.palettes_fragment.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -19,18 +18,21 @@ class PalettesFragment : BaseFragment() {
     @Inject
     lateinit var localStorage: LocalStorage
 
+    private lateinit var binding: PalettesFragmentBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.palettes_fragment, container, false)
+    ): View {
+        binding = PalettesFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView.apply {
+        binding.recyclerView.apply {
             setHasFixedSize(true)
             layoutManager = GridLayoutManager(requireContext(), 2).apply {
                 spanSizeLookup = object: GridLayoutManager.SpanSizeLookup() {
@@ -46,7 +48,7 @@ class PalettesFragment : BaseFragment() {
 
     private fun populateAdapter() {
         val list = PalettesFactory.palettes(localStorage.palette.name)
-        recyclerView.adapter = PalettesAdapter(ArrayList(list)).apply {
+        binding.recyclerView.adapter = PalettesAdapter(ArrayList(list)).apply {
             onItemClickListener { position, data ->
                 update(position, data.copy(isSelected = true))
                 localStorage.palette = data.paletteDetails
