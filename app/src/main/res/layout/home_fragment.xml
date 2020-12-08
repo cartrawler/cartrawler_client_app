@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/standalone"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView7"
@@ -42,8 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_margin="@dimen/half_spacing"
-                android:text="@string/start_standalone"
-                android:textStyle="bold" />
+                android:text="@string/start_standalone" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -68,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/in_path"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
@@ -82,8 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
                 android:layout_margin="@dimen/half_spacing"
-                android:text="@string/start_in_path"
-                android:textStyle="bold" />
+                android:text="@string/start_in_path" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -92,8 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/car_rental_app"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintStart_toStartOf="@+id/startGuideline"
         app:layout_constraintTop_toTopOf="@+id/topGuideline" />
 
@@ -133,7 +130,7 @@
         android:background="@drawable/ct_chip_day_night"
         android:padding="4dp"
         android:text="@string/sdk_version"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
         app:layout_constraintStart_toStartOf="@+id/startGuideline"
         app:layout_constraintTop_toBottomOf="@+id/titleTv" />
 
@@ -146,7 +143,7 @@
         android:background="@drawable/ct_chip_day_night"
         android:padding="4dp"
         android:text="@string/sdk_size"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/titleTv" />
 
