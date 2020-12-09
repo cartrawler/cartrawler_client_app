@@ -22,7 +22,7 @@ abstract class AbsSearchFragment<T : SearchListItem> : BaseFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = SearchListViewBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
         return binding.root

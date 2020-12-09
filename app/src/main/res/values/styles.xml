@@ -12,6 +12,8 @@
 
         <item name="colorControlNormal">@color/ct_white</item>
 
+        <item name="android:statusBarColor">#991E1E1E</item>
+
         <item name="searchViewStyle">@style/SearchViewStyle</item>
     </style>
 
@@ -26,5 +28,13 @@
         <item name="queryBackground">@android:color/transparent</item>
         <item name="closeIcon">@drawable/ct_close_black_24dp</item>
         <item name="searchHintIcon">@null</item>
+    </style>
+
+    <style name="CTSingleCarWrapper">
+        <item name="android:background">?android:colorBackground</item>
+    </style>
+
+    <style name="CTBestPriceCTAText">
+        <item name="android:textSize">18sp</item>
     </style>
 </resources>

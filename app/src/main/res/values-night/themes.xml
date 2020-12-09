@@ -1,5 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="ClientAppTheme" parent="CTDayNightTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
 
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/genericPrimary</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/genericDarkPrimary</item>
+
+        <item name="ctSingleCarWrapper">@style/CTSingleCarWrapper</item>
+        <item name="ctSingleCarTitle">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="ctSingleCarSubTitle">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="ctSingleCarAddedWrapper">@style/CTSingleCarWrapper</item>
+        <item name="ctSingleCarAddedText">@style/TextAppearance.MaterialComponents.Headline6</item>
+
+        <!-- New Attributes for new Widgets -->
+
+        <item name="ctSimpleWidgetImage">@drawable/ct_static_card_default</item>
+        <item name="ctSimpleWidgetTitle">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="ctSimpleWidgetSubtitle">@style/TextAppearance.MaterialComponents.Body1</item>
+
+        <item name="ctBestPriceWidgetImage">@drawable/ct_static_card_default</item>
+        <item name="ctBestPriceWidgetTitle">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="ctBestPriceWidgetSubtitle">@style/TextAppearance.MaterialComponents.Body1</item>
+
+        <item name="ctBestPriceWidgetCTAColor">?colorSecondary</item>
+        <item name="ctBestPriceCTACornerRadius">@dimen/ct_bestprice_cta_corner_radius</item>
+        <item name="ctBestPriceCTAText">@style/CTBestPriceCTAText</item>
+
+        <item name="ctCarAddedCheckIconColor">?colorPrimary</item>
+        <item name="ctCarAddedTitleText">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="ctCarRemoveText">@style/CTWidgetRemoveAppearance</item>
+
+        <item name="ctPriceLabelText">@style/CTWidgetLabelAppearance</item>
+        <item name="ctPriceValueText">@style/TextAppearance.MaterialComponents.Headline6</item>
+
+    </style>
+
+    <style name="ClientAppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="ClientAppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="CartrawlerWidgetTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="ctSingleCarWrapper">@style/CTSingleCarWrapper</item>
+        <item name="ctSingleCarTitle">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="ctSingleCarSubTitle">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="ctSingleCarAddedWrapper">@style/CTSingleCarWrapper</item>
+        <item name="ctSingleCarAddedText">@style/TextAppearance.MaterialComponents.Headline6</item>
+
+        <!-- New Attributes for new Widgets -->
+
+        <item name="ctSimpleWidgetImage">@drawable/ct_static_card_default</item>
+        <item name="ctSimpleWidgetTitle">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="ctSimpleWidgetSubtitle">@style/TextAppearance.MaterialComponents.Body1</item>
+
+        <item name="ctBestPriceWidgetImage">@drawable/ct_static_card_default</item>
+        <item name="ctBestPriceWidgetTitle">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="ctBestPriceWidgetSubtitle">@style/TextAppearance.MaterialComponents.Body1</item>
+
+        <item name="ctBestPriceWidgetCTAColor">?colorPrimary</item>
+        <item name="ctBestPriceCTACornerRadius">@dimen/ct_bestprice_cta_corner_radius</item>
+        <item name="ctBestPriceCTAText">@style/CTBestPriceCTAText</item>
+
+        <item name="ctCarAddedCheckIconColor">?colorPrimary</item>
+        <item name="ctCarAddedTitleText">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="ctCarRemoveText">@style/CTWidgetRemoveAppearance</item>
+
+        <item name="ctPriceLabelText">@style/CTWidgetLabelAppearance</item>
+        <item name="ctPriceValueText">@style/TextAppearance.MaterialComponents.Headline6</item>
+
+    </style>
+
+    <style name="GenericDarkTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/genericAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/genericPrimary</item>
+        <item name="ctIllustrationColor">@color/genericPrimaryLight</item>
+    </style>
+
+    <style name="GenericLightTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/genericLightAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/genericLightAccent</item>
+        <item name="ctIllustrationColor">@color/genericPrimaryLight</item>
+    </style>
+
+    <style name="EasyJetTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/easyJetPrimary</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/easyJetPrimary</item>
+    </style>
+
+    <style name="NorwegianTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/norwegianAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/norwegianAccent</item>
+        <item name="ctLoyaltyPrimaryColor">#333333</item>
+        <item name="ctLoyaltyPrimaryTextColor">#FFFFFF</item>
+        <item name="ctLoyaltySecondaryColor">#003E50</item>
+        <item name="ctLoyaltySecondaryTextColor">#FFFFFF</item>
+        <item name="CTLoyaltyTheme">dark</item>
+    </style>
+
+    <style name="TAPTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/TAPAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">#44A419</item>
+        <item name="ctLoyaltyPrimaryColor">#000000</item>
+        <item name="ctLoyaltyPrimaryTextColor">#FFFFFF</item>
+        <item name="ctLoyaltySecondaryColor">#000000</item>
+        <item name="ctLoyaltySecondaryTextColor">#FFFFFF</item>
+        <item name="CTLoyaltyTheme">dark</item>
+    </style>
+
+    <style name="EDreamsTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/eDreamsAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/eDreamsAccent</item>
+    </style>
+
+    <style name="ItakaTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/itakaAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/itakaAccent</item>
+    </style>
+
+    <style name="GoVoyagesTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/goVoyagesAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/goVoyagesAccent</item>
+    </style>
+
+    <style name="OpodoTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/opodoAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/opodoAccent</item>
+    </style>
+
+    <style name="TravellinkTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/travellinkAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/travellinkAccent</item>
+    </style>
+
+    <style name="TravelStartTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/travelStartAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/travelStartAccent</item>
+    </style>
+
+    <style name="FinnoTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/finnoAccent</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
+        <item name="colorSecondaryVariant">@color/finnoAccent</item>
+    </style>
 </resources>
