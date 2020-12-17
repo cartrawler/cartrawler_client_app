@@ -12,14 +12,12 @@
         android:layout_height="wrap_content"
         app:elevation="0dp">
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/Toolbar"
-            app:logo="@drawable/ic_app"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            android:minHeight="?attr/actionBarSize" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <fragment

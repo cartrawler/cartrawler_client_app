@@ -1,114 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="EDreamsTheme" parent="CTAppTheme">
+    <style name="EDreamsTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/eDreamsPrimary</item>
-        <item name="CTPrimaryColor">@color/eDreamsPrimary</item>
-        <item name="colorPrimaryDark">@color/eDreamsDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/eDreamsDarkPrimary</item>
-        <item name="colorAccent">@color/eDreamsAccent</item>
-        <item name="CTCTAColor">@color/eDreamsAccent</item>
-        <item name="CTPrimaryLightColor">#1E44D4</item>
-        <item name="CTSecondaryActionColor">#1E44D4</item>
+        <item name="colorOnPrimary">@color/ct_white</item>
+        <item name="colorPrimaryVariant">@color/eDreamsDarkPrimary</item>
+        <item name="android:statusBarColor">@color/eDreamsDarkPrimary</item>
+        <item name="colorSecondary">@color/eDreamsAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/eDreamsAccent</item>
     </style>
 
-    <style name="NorwegianTheme" parent="CTAppTheme">
+    <style name="NorwegianTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/norwegianPrimary</item>
-        <item name="CTPrimaryColor">@color/norwegianPrimary</item>
-        <item name="colorPrimaryDark">@color/norwegianDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/norwegianDarkPrimary</item>
-        <item name="colorAccent">@color/norwegianAccent</item>
-        <item name="CTCTAColor">@color/norwegianAccent</item>
-        <item name="CTPrimaryLightColor">#D71C3B</item>
-        <item name="CTSecondaryActionColor">#003E50</item>
-        <item name="CTLoyaltyPrimaryColor">#e5ebed</item>
-        <item name="CTLoyaltyPrimaryTextColor">#003E52</item>
-        <item name="CTLoyaltySecondaryColor">#003E50</item>
-        <item name="CTLoyaltySecondaryTextColor">#FFFFFF</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">@color/norwegianDarkPrimary</item>
+        <item name="android:statusBarColor">@color/norwegianDarkPrimary</item>
+        <item name="colorSecondary">@color/norwegianAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/norwegianAccent</item>
+        <item name="ctLoyaltyPrimaryColor">#003E52</item>
+        <item name="ctLoyaltyPrimaryTextColor">#FFFFFF</item>
+        <item name="ctLoyaltySecondaryColor">#003E50</item>
+        <item name="ctLoyaltySecondaryTextColor">#FFFFFF</item>
         <item name="CTLoyaltyTheme">dark</item>
     </style>
 
-    <style name="ItakaTheme" parent="CTLightThemeTest">
+    <style name="ItakaTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/itakaPrimary</item>
-        <item name="CTPrimaryColor">@color/itakaPrimary</item>
-        <item name="colorPrimaryDark">@color/itakaDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/itakaDarkPrimary</item>
-        <item name="colorAccent">@color/itakaAccent</item>
-        <item name="CTCTAColor">@color/itakaAccent</item>
-        <item name="CTPrimaryLightColor">#FFFFFF</item>
-        <item name="CTSecondaryActionColor">#EB2E2E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">@color/itakaDarkPrimary</item>
+        <item name="android:statusBarColor">@color/itakaDarkPrimary</item>
+        <item name="colorSecondary">@color/itakaAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/itakaAccent</item>
+        <item name="ctProgressBarColor">@color/itakaAccent</item>
     </style>
 
-    <style name="GoVoyagesTheme" parent="CTAppTheme">
+    <style name="GoVoyagesTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/goVoyagesPrimary</item>
-        <item name="CTPrimaryColor">@color/goVoyagesPrimary</item>
-        <item name="colorPrimaryDark">@color/goVoyagesDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/goVoyagesDarkPrimary</item>
-        <item name="colorAccent">@color/goVoyagesAccent</item>
-        <item name="CTCTAColor">@color/goVoyagesAccent</item>
-        <item name="CTPrimaryLightColor">@color/goVoyagesAccent</item>
-        <item name="CTSecondaryActionColor">@color/goVoyagesAccent</item>
+        <item name="colorOnPrimary">@color/ct_white</item>
+        <item name="colorPrimaryVariant">@color/goVoyagesDarkPrimary</item>
+        <item name="android:statusBarColor">@color/goVoyagesDarkPrimary</item>
+        <item name="colorSecondary">@color/goVoyagesAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/goVoyagesAccent</item>
     </style>
 
-    <style name="OpodoTheme" parent="CTAppTheme">
+    <style name="OpodoTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/opodoPrimary</item>
-        <item name="CTPrimaryColor">@color/opodoPrimary</item>
-        <item name="colorPrimaryDark">@color/opodoDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/opodoDarkPrimary</item>
-        <item name="colorAccent">@color/opodoAccent</item>
-        <item name="CTCTAColor">@color/opodoAccent</item>
-        <item name="CTPrimaryLightColor">#333333</item>
-        <item name="CTSecondaryActionColor">#333333</item>
+        <item name="colorOnPrimary">@color/ct_white</item>
+        <item name="colorPrimaryVariant">@color/opodoDarkPrimary</item>
+        <item name="android:statusBarColor">@color/opodoDarkPrimary</item>
+        <item name="colorSecondary">@color/opodoAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/opodoAccent</item>
     </style>
 
-    <style name="TravellinkTheme" parent="CTAppTheme">
+    <style name="TravellinkTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/travellinkPrimary</item>
-        <item name="CTPrimaryColor">@color/travellinkPrimary</item>
-        <item name="colorPrimaryDark">@color/travellinkDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/travellinkDarkPrimary</item>
-        <item name="colorAccent">@color/travellinkAccent</item>
-        <item name="CTCTAColor">@color/travellinkAccent</item>
-        <item name="CTPrimaryLightColor">#333333</item>
-        <item name="CTSecondaryActionColor">#21A1A1</item>
+        <item name="colorOnPrimary">@color/ct_white</item>
+        <item name="colorPrimaryVariant">@color/travellinkDarkPrimary</item>
+        <item name="android:statusBarColor">@color/travellinkDarkPrimary</item>
+        <item name="colorSecondary">@color/travellinkAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/travellinkAccent</item>
     </style>
 
-    <style name="TravelStartTheme" parent="CTLightThemeTest">
+    <style name="TravelStartTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/travelStartPrimary</item>
-        <item name="CTPrimaryColor">@color/travelStartPrimary</item>
-        <item name="colorPrimaryDark">@color/travelStartDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/travelStartDarkPrimary</item>
-        <item name="colorAccent">@color/travelStartAccent</item>
-        <item name="CTCTAColor">@color/travelStartAccent</item>
-        <item name="CTPrimaryLightColor">#1CB3F5</item>
-        <item name="CTSecondaryActionColor">@color/travelStartAccent</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">@color/travelStartDarkPrimary</item>
+        <item name="android:statusBarColor">@color/ct_transparent</item>
+        <item name="colorSecondary">@color/travelStartAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/travelStartAccent</item>
+        <item name="ctProgressBarColor">@color/travelStartAccent</item>
     </style>
 
-    <style name="FinnoTheme" parent="CTLightThemeTest">
+    <style name="FinnoTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/finnoPrimary</item>
-        <item name="CTPrimaryColor">@color/finnoPrimary</item>
-        <item name="colorPrimaryDark">@color/finnoDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/finnoDarkPrimary</item>
-        <item name="colorAccent">@color/finnoAccent</item>
-        <item name="CTCTAColor">@color/finnoAccent</item>
-        <item name="CTPrimaryLightColor">@color/finnoAccent</item>
-        <item name="CTSecondaryActionColor">@color/finnoAccent</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">@color/finnoDarkPrimary</item>
+        <item name="android:statusBarColor">@color/ct_black</item>
+        <item name="colorSecondary">@color/finnoAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/finnoAccent</item>
+        <item name="ctProgressBarColor">@color/finnoAccent</item>
     </style>
 
-    <style name="TAPTheme" parent="CTLightTheme">
+    <style name="TAPTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/TAPPrimary</item>
-        <item name="CTPrimaryColor">@color/TAPPrimary</item>
-        <item name="colorPrimaryDark">@color/TAPDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/TAPDarkPrimary</item>
-        <item name="colorAccent">@color/TAPAccent</item>
-        <item name="CTCTAColor">@color/TAPAccent</item>
-        <item name="CTCTATextColor">@color/TAPTextColor</item>
-        <item name="CTPrimaryLightColor">@color/TAPAccent</item>
-        <item name="CTSecondaryActionColor">#44A419</item>
-        <item name="CTSecondaryActionTextColor">#FFFFFF</item>
-        <item name="CTLoyaltyPrimaryColor">#000000</item>
-        <item name="CTLoyaltyPrimaryTextColor">#FFFFFF</item>
-        <item name="CTLoyaltySecondaryColor">#000000</item>
-        <item name="CTLoyaltySecondaryTextColor">#FFFFFF</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">@color/TAPDarkPrimary</item>
+        <item name="android:statusBarColor">@color/TAPDarkPrimary</item>
+        <item name="colorSecondary">@color/TAPAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">#44A419</item>
+        <item name="ctLoyaltyPrimaryColor">#000000</item>
+        <item name="ctLoyaltyPrimaryTextColor">#FFFFFF</item>
+        <item name="ctLoyaltySecondaryColor">#000000</item>
+        <item name="ctLoyaltySecondaryTextColor">#FFFFFF</item>
         <item name="CTLoyaltyTheme">dark</item>
+        <item name="ctProgressBarColor">@color/TAPAccent</item>
     </style>
 </resources>

@@ -3,28 +3,29 @@ package com.hisham.ctintegrationsample.searchlist
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.widget.SearchView
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.R
+import com.hisham.ctintegrationsample.databinding.SearchListViewBinding
 import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
-import kotlinx.android.synthetic.main.search_list_view.*
 import kotlin.properties.Delegates
 
 
 abstract class AbsSearchFragment<T : SearchListItem> : BaseFragment() {
 
     private var searchListAdapter: AbsSearchAdapter<T> by Delegates.notNull()
+    private lateinit var binding: SearchListViewBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        binding = SearchListViewBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.search_list_view, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,8 +79,8 @@ abstract class AbsSearchFragment<T : SearchListItem> : BaseFragment() {
     private fun initAdapter() {
         viewModel().run {
             // Observe
-            liveData.observe(viewLifecycleOwner, Observer {
-                searchListRecyclerView.apply {
+            liveData.observe(viewLifecycleOwner, {
+                binding.searchListRecyclerView.apply {
                     setHasFixedSize(true)
                     addItemDecoration(
                         DividerItemDecoration(

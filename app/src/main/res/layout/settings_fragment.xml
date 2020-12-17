@@ -90,7 +90,7 @@
                 tools:text="Ireland" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/changeLanguageDescriptionTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,12 +98,13 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/settings_language_selection_note"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/countryView" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/changeLanguageTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -111,7 +112,7 @@
             android:background="?selectableItemBackground"
             android:gravity="start|center_vertical"
             android:text="@string/language_settings"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
             android:textColor="@color/colorAccent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/changeLanguageDescriptionTv" />
@@ -121,30 +122,28 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginTop="24dp"
-            android:background="@color/CT_Grey"
+            android:background="@color/ct_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/changeLanguageTv" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/advancedTv"
             style="@style/CTText4.Bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/advanced"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/environmentTv"
             style="@style/CTText.ListItem.XLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/environment"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/advancedTv" />
 
@@ -157,13 +156,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/environmentTv">
 
-            <RadioButton
+            <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/developmentRBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/development" />
 
-            <RadioButton
+            <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/productionRBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,7 +170,7 @@
                 android:text="@string/production" />
         </RadioGroup>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/environmentDisclaimerTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -179,7 +178,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/settings_environment_selection_note"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/environmentRG" />
@@ -189,7 +189,7 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginTop="24dp"
-            android:background="@color/CT_Grey"
+            android:background="@color/ct_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/environmentDisclaimerTv" />

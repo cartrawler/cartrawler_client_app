@@ -1,6 +1,7 @@
 package com.hisham.ctintegrationsample
 
 import android.app.Activity
+import androidx.appcompat.app.AppCompatDelegate
 import cartrawler.core.engine.CartrawlerSDK
 import cartrawler.core.engine.CartrawlerSDKPassenger
 import com.hisham.ctintegrationsample.palette.data.PaletteDetails
@@ -30,6 +31,7 @@ object CarTrawlerInjector {
             .setPassenger(passenger(countryISO))
             .setVisitorId("123")
             .setTheme(getSelectedTheme(palette))
+            .setDarkModeConfig(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             .startRentalStandalone(activity, REQUEST_CODE_STANDALONE)
     }
 
@@ -54,6 +56,7 @@ object CarTrawlerInjector {
             .setDropOffLocationId(11)
             .setDropOffTime(getDropOffDate())
             .setTheme(getSelectedTheme(palette))
+            .setDarkModeConfig(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             .startRentalInPath(activity, REQUEST_CODE_IN_PATH)
     }
 
@@ -65,7 +68,7 @@ object CarTrawlerInjector {
     private fun getSelectedTheme(palette: PaletteDetails): Int {
         R.string.carTrawlerGeneric
         return when (palette.name) {
-            R.string.carTrawlerGeneric -> R.style.GenericTheme
+            R.string.carTrawlerGeneric -> R.style.GenericDarkTheme
             R.string.carTrawlerGenericLight -> R.style.GenericLightTheme
             R.string.partnerEasyJet -> R.style.EasyJetTheme
             R.string.partnereDreams -> R.style.EDreamsTheme
@@ -77,11 +80,11 @@ object CarTrawlerInjector {
             R.string.partnerTravelLink -> R.style.TravellinkTheme
             R.string.partnerFinno -> R.style.FinnoTheme
             R.string.partnerTAP -> R.style.TAPTheme
-            else -> R.style.GenericTheme
+            else -> R.style.GenericDarkTheme
         }
     }
 
-    private fun passenger(countryISO: String): CartrawlerSDKPassenger? {
+    private fun passenger(countryISO: String): CartrawlerSDKPassenger {
         return CartrawlerSDKPassenger(
             "John",
             "Smith",

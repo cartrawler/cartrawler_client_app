@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="EasyJetTheme" parent="CTDarkTheme">
-        <item name="colorPrimary">#ff751a</item>
-        <item name="CTPrimaryColor">#ff751a</item>
-        <item name="colorPrimaryDark">#c54500</item>
-        <item name="CTPrimaryDarkColor">#c54500</item>
-        <item name="colorAccent">#c54500</item>
-        <item name="CTCTAColor">#ff751a</item>
-        <item name="CTPrimaryLightColor">#FF6600</item>
-        <item name="CTBaseTextAppearance">@style/EasyJetAppFont</item>
+    <style name="EasyJetTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">@color/easyJetPrimary</item>
+        <item name="colorOnPrimary">@color/ct_white</item>
+        <item name="colorPrimaryVariant">@color/easyJetDarkPrimary</item>
+        <item name="android:statusBarColor">@color/easyJetDarkPrimary</item>
+        <item name="colorSecondary">@color/easyJetPrimary</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/easyJetPrimary</item>
         <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
-        <item name="CTChipFont">@font/easyjet_rounded_ff</item>
     </style>
 
     <style name="EasyJetAppFont" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
     </style>
 
-    <style name="EayJetAppWidgetFont" parent="Widget.AppCompat.EditText">
+    <style name="EayJetAppWidgetFont" parent="Widget.Design.TextInputEditText">
         <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
     </style>
 
@@ -25,7 +23,7 @@
         <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
     </style>
 
-    <style name="EasyJetTitle" parent="TextAppearance.AppCompat.Title">
+    <style name="EasyJetTitle" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:textColor">#FF6600</item>
         <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
         <item name="android:textStyle">bold</item>

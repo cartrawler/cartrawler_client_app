@@ -1,16 +1,18 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="CTLightTheme" />
+    <style name="AppTheme" parent="CTDayNightTheme" />
 
     <style name="ClientAppTheme" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
 
-        <item name="CTPrimaryColor">@color/colorPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/colorPrimaryDark</item>
-        <item name="CTPrimaryLightColor">@color/colorPrimaryLight</item>
+        <item name="colorSecondary">@color/genericPrimary</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+
+        <item name="colorControlNormal">@color/ct_white</item>
+
+        <item name="android:statusBarColor">#991E1E1E</item>
 
         <item name="searchViewStyle">@style/SearchViewStyle</item>
     </style>
@@ -20,16 +22,19 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <!-- Toolbar -->
-    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Light" />
-
     <!-- SearchView -->
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="queryHint">@string/search_hint</item>
         <item name="queryBackground">@android:color/transparent</item>
         <item name="closeIcon">@drawable/ct_close_black_24dp</item>
         <item name="searchHintIcon">@null</item>
+    </style>
+
+    <style name="CTSingleCarWrapper">
+        <item name="android:background">?android:colorBackground</item>
+    </style>
+
+    <style name="CTBestPriceCTAText">
+        <item name="android:textSize">18sp</item>
     </style>
 </resources>

@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="GenericTheme" parent="CTAppTheme">
+    <style name="GenericDarkTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/genericPrimary</item>
-        <item name="CTPrimaryColor">@color/genericPrimary</item>
-        <item name="colorPrimaryDark">@color/genericDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/genericDarkPrimary</item>
-        <item name="CTPrimaryLightColor">#37A4B8</item>
-        <item name="colorAccent">@color/genericAccent</item>
-        <item name="CTCTAColor">@color/genericAccent</item>
+        <item name="colorOnPrimary">@color/ct_white</item>
+        <item name="colorPrimaryVariant">@color/genericDarkPrimary</item>
+        <item name="android:statusBarColor">@color/genericDarkPrimary</item>
+        <item name="colorSecondary">@color/genericAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/genericPrimary</item>
+        <item name="ctIllustrationColor">#37A4B8</item>
     </style>
-
-    <style name="GenericLightTheme" parent="CTLightThemeTest">
+    <style name="GenericLightTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/genericLightPrimary</item>
-        <item name="CTPrimaryColor">@color/genericLightPrimary</item>
-        <item name="colorPrimaryDark">@color/genericLightDarkPrimary</item>
-        <item name="CTPrimaryDarkColor">@color/genericLightDarkPrimary</item>
-        <item name="CTPrimaryLightColor">#37A4B8</item>
-        <item name="colorAccent">@color/genericLightAccent</item>
-        <item name="CTCTAColor">#EB6401</item>
-        <item name="CTSecondaryActionColor">#007585</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">@color/genericLightDarkPrimary</item>
+        <item name="android:statusBarColor">@color/ct_black</item>
+        <item name="colorSecondary">@color/genericLightAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/genericPrimary</item>
+        <item name="ctLoyaltyPrimaryColor">@color/ct_white</item>
+        <item name="ctLoyaltyPrimaryTextColor">@color/ct_white</item>
+        <item name="ctLoyaltySecondaryColor">@color/cardview_dark_background</item>
+        <item name="ctLoyaltySecondaryTextColor">@color/ct_white</item>
+        <item name="CTLoyaltyTheme">dark</item>
+        <item name="ctProgressBarColor">@color/genericLightAccent</item>
+        <item name="ctIllustrationColor">#37A4B8</item>
     </style>
 </resources>
