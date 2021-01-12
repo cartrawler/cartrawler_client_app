@@ -4,7 +4,7 @@ import android.os.Parcelable
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import com.hisham.ctintegrationsample.R
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 sealed class PaletteUiData {
     data class Item(val paletteDetails: PaletteDetails, val isSelected: Boolean) : PaletteUiData()
@@ -122,6 +122,14 @@ object PalettesFactory {
                 primary = R.color.TAPPrimary,
                 primaryDark = R.color.TAPDarkPrimary,
                 accent = R.color.TAPAccent
+            ),
+            buildPaletteItem(
+                currentSelectedName,
+                name = R.string.partnerRental24h,
+                clientId = R.string.partnerRental24hClientId,
+                primary = R.color.rental24hPrimary,
+                primaryDark = R.color.rental24hDarkPrimary,
+                accent = R.color.rental24hAccent
             )
         )
 

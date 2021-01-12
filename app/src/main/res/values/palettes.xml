@@ -79,4 +79,11 @@
     <color name="TAPAccent">#B5EB56</color>
     <color name="TAPTextColor">#2C2C2C</color>
     <color name="TAPSecondaryColor">#44A419</color>
+
+    <string name="partnerRental24h">Rental24</string>
+    <string name="partnerRental24hClientId">553676</string>
+    <color name="rental24hPrimary">#007585</color>
+    <color name="rental24hDarkPrimary">#004852</color>
+    <color name="rental24hPrimaryLight">#37A4B8</color>
+    <color name="rental24hAccent">#EB6401</color>
 </resources>
