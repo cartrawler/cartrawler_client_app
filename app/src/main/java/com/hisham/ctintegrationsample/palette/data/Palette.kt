@@ -130,6 +130,22 @@ object PalettesFactory {
                 primary = R.color.rental24hPrimary,
                 primaryDark = R.color.rental24hDarkPrimary,
                 accent = R.color.rental24hAccent
+            ),
+            buildPaletteItem(
+                currentSelectedName,
+                name = R.string.partnerHolidayAutos,
+                clientId = R.string.partnerHolidayAutosClientId,
+                primary = R.color.holidayAutosPrimary,
+                primaryDark = R.color.holidayAutosDarkPrimary,
+                accent = R.color.holidayAutosAccent
+            ),
+            buildPaletteItem(
+                currentSelectedName,
+                name = R.string.partnerArgus,
+                clientId = R.string.partnerArgusClientId,
+                primary = R.color.argusPrimary,
+                primaryDark = R.color.argusDarkPrimary,
+                accent = R.color.argusAccent
             )
         )
 
