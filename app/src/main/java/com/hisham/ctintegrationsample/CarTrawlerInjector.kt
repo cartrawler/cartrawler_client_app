@@ -80,6 +80,8 @@ object CarTrawlerInjector {
             R.string.partnerTravelLink -> R.style.TravellinkTheme
             R.string.partnerFinno -> R.style.FinnoTheme
             R.string.partnerTAP -> R.style.TAPTheme
+            R.string.partnerArgus -> R.style.ArgusTheme
+            R.string.partnerHolidayAutos -> R.style.HolidaysTheme
             else -> R.style.GenericDarkTheme
         }
     }

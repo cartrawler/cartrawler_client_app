@@ -86,4 +86,18 @@
     <color name="rental24hDarkPrimary">#004852</color>
     <color name="rental24hPrimaryLight">#37A4B8</color>
     <color name="rental24hAccent">#EB6401</color>
+
+    <string name="partnerArgus">Argus Car Hire</string>
+    <string name="partnerArgusClientId">685051</string>
+    <color name="argusPrimary">@color/ct_white</color>
+    <color name="argusDarkPrimary">#0A5BB6</color>
+    <color name="argusPrimaryLight">#5887E9</color>
+    <color name="argusAccent">#0A5BB6</color>
+
+    <string name="partnerHolidayAutos">Holiday Autos</string>
+    <string name="partnerHolidayAutosClientId">685017</string>
+    <color name="holidayAutosPrimary">@color/ct_white</color>
+    <color name="holidayAutosDarkPrimary">#6BF0FF</color>
+    <color name="holidayAutosPrimaryLight">#6BF0FF</color>
+    <color name="holidayAutosAccent">#21bdd5</color>
 </resources>

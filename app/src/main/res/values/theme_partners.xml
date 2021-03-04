@@ -104,4 +104,36 @@
         <item name="CTLoyaltyTheme">dark</item>
         <item name="ctProgressBarColor">@color/TAPAccent</item>
     </style>
+
+    <style name="ArgusTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">@color/argusPrimary</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">@color/holidayAutosPrimary</item>
+        <item name="android:statusBarColor">@color/TAPDarkPrimary</item>
+        <item name="colorSecondary">@color/argusAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/argusAccent</item>
+        <item name="ctLoyaltyPrimaryColor">#000000</item>
+        <item name="ctLoyaltyPrimaryTextColor">#FFFFFF</item>
+        <item name="ctLoyaltySecondaryColor">#000000</item>
+        <item name="ctLoyaltySecondaryTextColor">#FFFFFF</item>
+        <item name="CTLoyaltyTheme">dark</item>
+        <item name="ctProgressBarColor">@color/argusAccent</item>
+    </style>
+
+    <style name="HolidaysTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">@color/holidayAutosPrimary</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">@color/holidayAutosPrimary</item>
+        <item name="android:statusBarColor">@color/holidayAutosPrimary</item>
+        <item name="colorSecondary">@color/holidayAutosAccent</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/holidayAutosAccent</item>
+        <item name="ctLoyaltyPrimaryColor">#000000</item>
+        <item name="ctLoyaltyPrimaryTextColor">#FFFFFF</item>
+        <item name="ctLoyaltySecondaryColor">#000000</item>
+        <item name="ctLoyaltySecondaryTextColor">#FFFFFF</item>
+        <item name="CTLoyaltyTheme">dark</item>
+        <item name="ctProgressBarColor">@color/holidayAutosAccent</item>
+    </style>
 </resources>
