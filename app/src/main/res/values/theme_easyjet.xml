@@ -9,6 +9,7 @@
         <item name="colorOnSecondary">@color/ct_white</item>
         <item name="colorSecondaryVariant">@color/easyJetPrimary</item>
         <item name="android:fontFamily">@font/easyjet_rounded_ff</item>
+        <item name="fontFamily">@font/easyjet_rounded_ff</item>
     </style>
 
     <style name="EasyJetAppFont" parent="TextAppearance.AppCompat">
