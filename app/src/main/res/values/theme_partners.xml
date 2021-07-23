@@ -11,6 +11,23 @@
         <item name="colorSecondaryVariant">@color/eDreamsAccent</item>
     </style>
 
+    <style name="EDreamsPrimeTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">@color/eDreamsPrimePrimary</item>
+        <item name="colorOnPrimary">@color/ct_white</item>
+        <item name="colorPrimaryVariant">@color/eDreamsPrimePrimaryDark</item>
+        <item name="android:statusBarColor">@color/eDreamsPrimePrimaryDark</item>
+        <item name="colorSecondary">@color/eDreamsPrimeSecondary</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/eDreamsPrimeSecondary</item>
+        <item name="ctCashBgStartColor">@color/eDreamsPrimePrimary</item>
+        <item name="ctCashBgEndColor">@color/eDreamsPrimePrimaryDark</item>
+        <item name="ctCashPrimaryTextColor">@color/ct_white</item>
+        <item name="ctCashSecondaryTextColor">#14baa1</item>
+        <item name="ctCashLogoDrawable">@drawable/ic_prime_logo</item>
+        <item name="ctCashSmallLogoDrawable">@drawable/ic_prime_logo</item>
+        <item name="ctUSPLogoDrawable">@drawable/ic_prime_logo</item>
+    </style>
+
     <style name="NorwegianTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">@color/norwegianPrimary</item>
         <item name="colorOnPrimary">@color/ct_black</item>

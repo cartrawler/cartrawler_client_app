@@ -148,6 +148,16 @@
         <item name="colorSecondaryVariant">@color/eDreamsAccent</item>
     </style>
 
+    <style name="EDreamsPrimeTheme" parent="CTDayNightTheme">
+        <item name="colorPrimary">#1E1E1E</item>
+        <item name="colorOnPrimary">@color/ct_black</item>
+        <item name="colorPrimaryVariant">#1E1E1E</item>
+        <item name="android:statusBarColor">#1E1E1E</item>
+        <item name="colorSecondary">@color/eDreamsPrimeSecondary</item>
+        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorSecondaryVariant">@color/eDreamsPrimeSecondary</item>
+    </style>
+
     <style name="ItakaTheme" parent="CTDayNightTheme">
         <item name="colorPrimary">#1E1E1E</item>
         <item name="colorOnPrimary">@color/ct_black</item>

@@ -29,6 +29,12 @@
     <color name="eDreamsDarkPrimary">#1E44D4</color>
     <color name="eDreamsAccent">#1E44D4</color>
 
+    <string name="partnereDreamsPrime">eDreams Prime</string>
+    <string name="partnereDreamsPrimeClientId">564471</string>
+    <color name="eDreamsPrimePrimary">#002c52</color>
+    <color name="eDreamsPrimePrimaryDark">#000d29</color>
+    <color name="eDreamsPrimeSecondary">#002c52</color>
+
     <string name="partnerNorwegian">Norwegian</string>
     <string name="partnerNorwegianClientId">828735</string>
     <color name="norwegianPrimary">#D71C3B</color>

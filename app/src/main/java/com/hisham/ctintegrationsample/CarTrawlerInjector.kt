@@ -2,6 +2,7 @@ package com.hisham.ctintegrationsample
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatDelegate
+import cartrawler.core.base.USPDisplayType
 import cartrawler.core.engine.CartrawlerSDK
 import cartrawler.core.engine.CartrawlerSDKPassenger
 import com.hisham.ctintegrationsample.palette.data.PaletteDetails
@@ -19,7 +20,11 @@ object CarTrawlerInjector {
         countryISO: String,
         environment: String
     ) {
-        CartrawlerSDK.Builder()
+        val builder = CartrawlerSDK.Builder()
+
+        enableCustomCashTreatment(activity, palette, builder)
+
+        builder
             .setRentalStandAloneClientId(clientId(activity, palette))
             .setAccountId("CZ638817950")
             .setCountry(countryISO)
@@ -42,7 +47,11 @@ object CarTrawlerInjector {
         countryISO: String,
         environment: String
     ) {
-        CartrawlerSDK.Builder()
+        val builder = CartrawlerSDK.Builder()
+
+        enableCustomCashTreatment(activity, palette, builder)
+
+        builder
             .setRentalInPathClientId(clientId(activity, palette))
             .setEnvironment(environment)
             .setCurrency(currency)
@@ -82,6 +91,7 @@ object CarTrawlerInjector {
             R.string.partnerTAP -> R.style.TAPTheme
             R.string.partnerArgus -> R.style.ArgusTheme
             R.string.partnerHolidayAutos -> R.style.HolidaysTheme
+            R.string.partnereDreamsPrime -> R.style.EDreamsPrimeTheme
             else -> R.style.GenericDarkTheme
         }
     }
@@ -114,5 +124,16 @@ object CarTrawlerInjector {
         val dropOfDateTime = getPickUpDate()
         dropOfDateTime.add(GregorianCalendar.DAY_OF_MONTH, rentalPeriodDays)
         return dropOfDateTime
+    }
+
+    private fun enableCustomCashTreatment(activity: Activity, palette: PaletteDetails, builder: CartrawlerSDK.Builder) {
+        if (hasValidClientId(activity, palette)) {
+            builder.enableCustomCashTreatment()
+            builder.setUSPDisplayType(USPDisplayType.CHECK_STYLE)
+        }
+    }
+
+    private fun hasValidClientId(activity: Activity, palette: PaletteDetails): Boolean {
+        return clientId(activity, palette) == activity.getString(R.string.partnereDreamsPrimeClientId)
     }
 }
