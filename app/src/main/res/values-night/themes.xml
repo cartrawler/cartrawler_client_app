@@ -154,8 +154,15 @@
         <item name="colorPrimaryVariant">#1E1E1E</item>
         <item name="android:statusBarColor">#1E1E1E</item>
         <item name="colorSecondary">@color/eDreamsPrimeSecondary</item>
-        <item name="colorOnSecondary">@color/ct_white</item>
+        <item name="colorOnSecondary">@color/ct_black</item>
         <item name="colorSecondaryVariant">@color/eDreamsPrimeSecondary</item>
+        <item name="ctCashBgStartColor">@color/eDreamsPrimePrimary</item>
+        <item name="ctCashBgEndColor">@color/eDreamsPrimePrimaryDark</item>
+        <item name="ctCashPrimaryTextColor">@color/ct_black</item>
+        <item name="ctCashSecondaryTextColor">#14baa1</item>
+        <item name="ctCashLogoDrawable">@drawable/ic_prime_logo</item>
+        <item name="ctCashSmallLogoDrawable">@drawable/ic_prime_logo</item>
+        <item name="ctUSPLogoDrawable">@drawable/ic_prime_logo</item>
     </style>
 
     <style name="ItakaTheme" parent="CTDayNightTheme">
