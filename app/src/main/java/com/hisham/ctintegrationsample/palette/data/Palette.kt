@@ -61,6 +61,14 @@ object PalettesFactory {
             ),
             buildPaletteItem(
                 currentSelectedName,
+                name = R.string.partnereDreamsPrime,
+                clientId = R.string.partnereDreamsPrimeClientId,
+                primary = R.color.eDreamsPrimePrimary,
+                primaryDark = R.color.eDreamsPrimePrimaryDark,
+                accent = R.color.eDreamsPrimeSecondary
+            ),
+            buildPaletteItem(
+                currentSelectedName,
                 name = R.string.partnerNorwegian,
                 clientId = R.string.partnerNorwegianClientId,
                 primary = R.color.norwegianPrimary,
