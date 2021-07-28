@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import cartrawler.core.base.USPDisplayType
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.CarTrawlerInjector
 import com.hisham.ctintegrationsample.R
@@ -39,13 +40,20 @@ class HomeFragment : BaseFragment() {
         val countryISO = localStorage.country
         val environment = localStorage.environment
 
+        val landingStyleType = if (localStorage.landingStyle == USPDisplayType.CHECK_STYLE.name) {
+            USPDisplayType.CHECK_STYLE
+        } else {
+            USPDisplayType.DEFAULT_STYLE
+        }
+
         binding.startStandaloneBtn.setOnClickListener {
             CarTrawlerInjector.initStandalone(
                 requireActivity(),
                 localStorage.palette,
                 currency,
                 countryISO,
-                environment
+                environment,
+                landingStyleType
             )
         }
 

@@ -90,6 +90,29 @@
                 tools:text="Ireland" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/landingStyleView"
+            style="@style/CTTextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="@string/landing_style"
+            app:hintAnimationEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/countryView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/CTEditTextReadOnlyStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:inputType="none"
+                android:minHeight="60dp"
+                android:singleLine="true"
+                tools:text="Default" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/changeLanguageDescriptionTv"
             android:layout_width="wrap_content"
@@ -102,7 +125,7 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/countryView" />
+            app:layout_constraintTop_toBottomOf="@+id/landingStyleView" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/changeLanguageTv"

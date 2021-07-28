@@ -4,6 +4,7 @@
     <string name="action_theme">Theme</string>
     <string name="action_currency">Currency</string>
     <string name="action_country">Country</string>
+    <string name="action_selector">Landing Style</string>
     <string name="standalone">Standalone</string>
     <string name="standalone_description">End to end car rental booking flow including card payment</string>
     <string name="start_standalone">Start Standalone</string>
@@ -21,4 +22,7 @@
     <string name="development">Development</string>
     <string name="environment">Environment</string>
     <string name="language_settings">Language Settings</string>
+    <string name="landing_style">Landing style page</string>
+    <string name="landing_style_default">Default</string>
+    <string name="landing_style_checkmark">Checkmark</string>
 </resources>

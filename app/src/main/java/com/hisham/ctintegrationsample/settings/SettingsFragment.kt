@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import cartrawler.core.base.USPDisplayType
 import cartrawler.core.engine.CartrawlerSDK
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.R
@@ -87,6 +88,21 @@ class SettingsFragment : BaseFragment() {
             localStorage.environment = when(checkedId) {
                 R.id.productionRBtn -> CartrawlerSDK.Environment.PRODUCTION
                 else -> CartrawlerSDK.Environment.STAGING
+            }
+        }
+
+        val landingStyle = localStorage.landingStyle
+        binding.landingStyleView.apply {
+            editText?.apply {
+                if (landingStyle == USPDisplayType.DEFAULT_STYLE.name) {
+                    setText(getString(R.string.landing_style_default))
+                } else {
+                    setText(getString(R.string.landing_style_checkmark))
+                }
+
+                setOnClickListener {
+                    findNavController().navigate(SettingsFragmentDirections.actionSettingsFragmentToLandingSelectorFragment())
+                }
             }
         }
     }
