@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import by.kirich1409.viewbindingdelegate.viewBinding
-import cartrawler.core.base.USPDisplayType
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.core.LocalStorage
 import com.hisham.ctintegrationsample.databinding.SelectorViewBinding
+import com.hisham.ctintegrationsample.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -37,10 +37,7 @@ class LandingSelectorFragment : Fragment(R.layout.selector_view) {
         selectorRecyclerView.adapter = selectorAdapter
 
         selectorAdapter.submitList(
-            listOf(
-                USPDisplayType.DEFAULT_STYLE.name,
-                USPDisplayType.CHECK_STYLE.name
-            )
+            Constants.uspTypes().values.toList()
         )
     }
 }

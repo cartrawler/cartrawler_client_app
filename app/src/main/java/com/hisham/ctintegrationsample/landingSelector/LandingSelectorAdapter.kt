@@ -9,7 +9,7 @@ import cartrawler.core.base.USPDisplayType
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.databinding.SelectorItemBinding
 
-class SelectorAdapter(private val onClick: (String) -> Unit) : ListAdapter<String, SelectorAdapter.SelectorViewHolder>(selectorDiff) {
+class SelectorAdapter(private val onClick: (String) -> Unit) : ListAdapter<USPDisplayType, SelectorAdapter.SelectorViewHolder>(selectorDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectorAdapter.SelectorViewHolder {
         val binding = SelectorItemBinding.inflate(
@@ -27,28 +27,28 @@ class SelectorAdapter(private val onClick: (String) -> Unit) : ListAdapter<Strin
 
     inner class SelectorViewHolder(private val binding: SelectorItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(landingStyle: String, onClick: (String) -> Unit) {
+        fun bind(landingStyle: USPDisplayType, onClick: (String) -> Unit) {
             val context = binding.root.context
 
-            if (landingStyle == USPDisplayType.DEFAULT_STYLE.name) {
+            if (landingStyle.name == USPDisplayType.DEFAULT_STYLE.name) {
                 binding.itemText.text = context.getString(R.string.landing_style_default)
             } else {
                 binding.itemText.text = context.getString(R.string.landing_style_checkmark)
             }
 
             binding.itemText.setOnClickListener {
-                onClick(landingStyle)
+                onClick(landingStyle.name)
             }
         }
     }
 }
 
-private val selectorDiff = object : DiffUtil.ItemCallback<String>() {
-    override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+private val selectorDiff = object : DiffUtil.ItemCallback<USPDisplayType>() {
+    override fun areItemsTheSame(oldItem: USPDisplayType, newItem: USPDisplayType): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+    override fun areContentsTheSame(oldItem: USPDisplayType, newItem: USPDisplayType): Boolean {
         return false
     }
 }

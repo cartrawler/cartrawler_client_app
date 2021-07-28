@@ -10,6 +10,7 @@ import com.hisham.ctintegrationsample.CarTrawlerInjector
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.core.LocalStorage
 import com.hisham.ctintegrationsample.databinding.HomeFragmentBinding
+import com.hisham.ctintegrationsample.utils.Constants.uspTypes
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -40,12 +41,6 @@ class HomeFragment : BaseFragment() {
         val countryISO = localStorage.country
         val environment = localStorage.environment
 
-        val landingStyleType = if (localStorage.landingStyle == USPDisplayType.CHECK_STYLE.name) {
-            USPDisplayType.CHECK_STYLE
-        } else {
-            USPDisplayType.DEFAULT_STYLE
-        }
-
         binding.startStandaloneBtn.setOnClickListener {
             CarTrawlerInjector.initStandalone(
                 requireActivity(),
@@ -53,7 +48,7 @@ class HomeFragment : BaseFragment() {
                 currency,
                 countryISO,
                 environment,
-                landingStyleType
+                uspTypes()[localStorage.landingStyle] ?: USPDisplayType.DEFAULT_STYLE
             )
         }
 
