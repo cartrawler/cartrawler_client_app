@@ -18,7 +18,8 @@ object CarTrawlerInjector {
         palette: PaletteDetails,
         currency: String,
         countryISO: String,
-        environment: String
+        environment: String,
+        landingStyleType: USPDisplayType
     ) {
         val builder = CartrawlerSDK.Builder()
 
@@ -37,6 +38,7 @@ object CarTrawlerInjector {
             .setVisitorId("123")
             .setTheme(getSelectedTheme(palette))
             .setDarkModeConfig(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            .setUSPDisplayType(landingStyleType)
             .startRentalStandalone(activity, REQUEST_CODE_STANDALONE)
     }
 
@@ -129,7 +131,6 @@ object CarTrawlerInjector {
     private fun enableCustomCashTreatment(activity: Activity, palette: PaletteDetails, builder: CartrawlerSDK.Builder) {
         if (hasValidClientId(activity, palette)) {
             builder.enableCustomCashTreatment()
-            builder.setUSPDisplayType(USPDisplayType.CHECK_STYLE)
         }
     }
 

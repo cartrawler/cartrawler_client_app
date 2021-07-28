@@ -3,6 +3,7 @@ package com.hisham.ctintegrationsample.core
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import cartrawler.core.base.USPDisplayType
 import cartrawler.core.engine.CartrawlerSDK
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.palette.data.PaletteDetails
@@ -30,6 +31,10 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
     var environment: String
         get() = environment()
         set(value) = saveEnvironment(value)
+
+    var landingStyle: String
+        get() = landingStyle()
+        set(value) = saveLandingStyle(value)
 
     private fun savePalette(paletteDetails: PaletteDetails) {
         sharedPrefs.edit {
@@ -86,6 +91,14 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         edit { putString(KEY_ENVIRONMENT, value) }
     }
 
+    private fun landingStyle(): String = with(sharedPrefs) {
+        getString(KEY_LANDING_STYLE_TYPE, USPDisplayType.DEFAULT_STYLE.name) ?: USPDisplayType.DEFAULT_STYLE.name
+    }
+
+    private fun saveLandingStyle(value: String) = with(sharedPrefs) {
+        edit { putString(KEY_LANDING_STYLE_TYPE, value) }
+    }
+
     private companion object {
         private const val CT_APP_SHARED_PREFS = "com.cartrawler.android.app"
 
@@ -98,5 +111,6 @@ class LocalStorage @Inject constructor(@ApplicationContext private val context: 
         private const val KEY_CURRENCY_VALUE = "KEY_CURRENCY_VALUE"
         private const val KEY_COUNTRY_ISO_VALUE = "KEY_COUNTRY_ISO_VALUE"
         private const val KEY_ENVIRONMENT = "KEY_ENVIRONMENT"
+        private const val KEY_LANDING_STYLE_TYPE = "KEY_LANDING_STYLE_TYPE"
     }
 }

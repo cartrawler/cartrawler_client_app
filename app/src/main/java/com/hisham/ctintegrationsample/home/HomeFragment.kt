@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.*
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import cartrawler.core.base.USPDisplayType
 import com.hisham.ctintegrationsample.BaseFragment
 import com.hisham.ctintegrationsample.CarTrawlerInjector
 import com.hisham.ctintegrationsample.R
 import com.hisham.ctintegrationsample.core.LocalStorage
 import com.hisham.ctintegrationsample.databinding.HomeFragmentBinding
+import com.hisham.ctintegrationsample.utils.Constants.uspTypes
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -45,7 +47,8 @@ class HomeFragment : BaseFragment() {
                 localStorage.palette,
                 currency,
                 countryISO,
-                environment
+                environment,
+                uspTypes()[localStorage.landingStyle] ?: USPDisplayType.DEFAULT_STYLE
             )
         }
 

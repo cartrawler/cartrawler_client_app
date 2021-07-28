@@ -37,6 +37,15 @@
             app:exitAnim="@anim/ct_slide_out_down"
             app:popEnterAnim="@anim/ct_slide_in_up"
             app:popExitAnim="@anim/ct_slide_out_down"/>
+
+        <action
+            android:id="@+id/action_settingsFragment_to_landingSelectorFragment"
+            app:destination="@+id/landingSelectorFragment"
+            app:enterAnim="@anim/ct_slide_in_up"
+            app:exitAnim="@anim/ct_slide_out_down"
+            app:popEnterAnim="@anim/ct_slide_in_up"
+            app:popExitAnim="@anim/ct_slide_out_down" />
+
     </fragment>
 
     <fragment
@@ -55,4 +64,11 @@
         android:name="com.hisham.ctintegrationsample.searchlist.currencylist.CurrencyListFragment"
         android:label="@string/action_currency"
         tools:layout="@layout/search_list_view" />
+
+    <fragment
+        android:id="@+id/landingSelectorFragment"
+        android:name="com.hisham.ctintegrationsample.landingSelector.LandingSelectorFragment"
+        android:label="@string/action_selector"
+        tools:layout="@layout/selector_view" />
+
 </navigation>
