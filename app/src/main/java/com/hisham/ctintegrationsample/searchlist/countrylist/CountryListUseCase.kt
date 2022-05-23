@@ -6,8 +6,9 @@ import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
 import java.util.*
 import javax.inject.Inject
 
-class CountryListUseCase @Inject constructor(localStorage: LocalStorage) :
-    AbsSearchUseCase<SearchListItem.Country>(localStorage) {
+class CountryListUseCase @Inject constructor(
+    localStorage: LocalStorage
+) : AbsSearchUseCase<SearchListItem.Country>(localStorage) {
 
     override fun fetch(): List<SearchListItem.Country> {
         val isoCountries = Locale.getISOCountries()

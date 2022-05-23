@@ -1,7 +1,11 @@
 package com.hisham.ctintegrationsample.searchlist.currencylist
 
-import androidx.hilt.lifecycle.ViewModelInject
 import com.hisham.ctintegrationsample.searchlist.AbsSearchViewModel
 import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class CurrencyListViewModel @ViewModelInject constructor(useCase: CurrencyListUseCase): AbsSearchViewModel<SearchListItem.Currency>(useCase)
+@HiltViewModel
+class CurrencyListViewModel @Inject constructor(
+    useCase: CurrencyListUseCase
+) : AbsSearchViewModel<SearchListItem.Currency>(useCase)

@@ -1,7 +1,11 @@
 package com.hisham.ctintegrationsample.searchlist.countrylist
 
-import androidx.hilt.lifecycle.ViewModelInject
 import com.hisham.ctintegrationsample.searchlist.AbsSearchViewModel
 import com.hisham.ctintegrationsample.searchlist.data.SearchListItem
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class CountryListViewModel @ViewModelInject constructor(useCase: CountryListUseCase): AbsSearchViewModel<SearchListItem.Country>(useCase)
+@HiltViewModel
+class CountryListViewModel @Inject constructor(
+    useCase: CountryListUseCase
+) : AbsSearchViewModel<SearchListItem.Country>(useCase)

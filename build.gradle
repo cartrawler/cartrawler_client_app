@@ -3,20 +3,20 @@
 buildscript {
     ext.versions = [
         //ct
-        'cartrawlerSdk': "11.11.0",
+        'cartrawlerSdk': "12.0.1",
 
         // kotlin
-        'kotlin'       : '1.4.32',
+        'kotlin'       : '1.5.31',
 
         // Jetpack
         'navigation'   : '2.3.5',
-        'hilt'         : '2.32-alpha',
+        'hilt'         : '2.42',
         'hiltViewModel' : '1.0.0-alpha03',
-        'appcompat': '1.2.0',
-        'fragmentKtx': '1.3.2',
-        'coreKtx': '1.3.2',
-        'constraintlayout': '2.0.4',
-        'recyclerview': '1.2.0',
+        'appcompat': '1.4.1',
+        'fragmentKtx': '1.4.1',
+        'coreKtx': '1.7.0',
+        'constraintlayout': '2.1.3',
+        'recyclerview': '1.2.1',
 
         // UI
         'material'      : "1.3.0",
@@ -27,7 +27,6 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
         mavenCentral()
         maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     }
@@ -42,16 +41,16 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
         repositories {
             maven {
                 url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
                 credentials {
-                    username = "admin"
-                    password = "xhszNx08b57EjoQczLTt"
+                    username = nativeArtifactoryUsername
+                    password = nativeArtifactoryPassword
                 }
             }
         }
+        jcenter()
     }
 }
 
