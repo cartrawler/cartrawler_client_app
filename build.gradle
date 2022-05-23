@@ -43,11 +43,9 @@ allprojects {
         google()
         repositories {
             maven {
+                name="nativeArtifactory"
+                credentials(PasswordCredentials)
                 url "http://artifactory.cartrawler.com/artifactory/libs-release-local"
-                credentials {
-                    username = nativeArtifactoryUsername
-                    password = nativeArtifactoryPassword
-                }
             }
         }
         jcenter()
