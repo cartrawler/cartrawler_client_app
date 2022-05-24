@@ -10,8 +10,7 @@ buildscript {
 
         // Jetpack
         'navigation'   : '2.3.5',
-        'hilt'         : '2.42',
-        'hiltViewModel' : '1.0.0-alpha03',
+        'hilt'         : '2.38.1',
         'appcompat': '1.4.1',
         'fragmentKtx': '1.4.1',
         'coreKtx': '1.7.0',
